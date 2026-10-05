@@ -1,0 +1,61 @@
+import express from "express";
+import cors from "cors";
+import employeeRoutes from "./routes/employee.routes.js";
+import userRoutes from "./routes/user.routes.js";
+import jobRoutes from "./routes/job.routes.js";
+import applicationRoutes from "./routes/application.routes.js";
+import submitRoutes from "./routes/submit.routes.js";
+import contactRoute from "./routes/contactRoutes.js";
+// import other routes later
+
+const app = express();
+
+// Allowed origins from .env
+const allowedOrigins = process.env.ALLOWED_ORIGINS?.split(",") || [];
+// CORS middleware
+app.use(
+  cors({
+    origin: (origin, callback) => {
+      // allow requests with no origin (like Postman or server-to-server)
+      if (!origin || allowedOrigins.includes(origin)) {
+        callback(null, true);
+      } else {
+        callback(new Error("Not allowed by CORS"));
+      }
+    },
+  })
+);
+
+// 📦 Parse JSON requests
+app.use(express.json());
+// 📦 Parse URL-encoded requests
+app.use(express.urlencoded({ extended: true }));
+
+// 🔹 Mount Routes
+app.use("/api/employees", employeeRoutes);
+app.use("/api/users", userRoutes);
+app.use("/api/jobs", jobRoutes);
+app.use("/api/applications", applicationRoutes);
+app.use("/api/submit", submitRoutes);
+app.use("/api/contact", contactRoute);
+
+// 🔹 Default route
+app.get("/", (req, res) => {
+  res.send("MSL Careers Backend Running 🚀");
+});
+
+// 🔹 404 handler for unmatched routes
+app.use((req, res) => {
+  res.status(404).json({ status: "error", message: "Route not found" });
+});
+
+// 🔹 Global Error Handler (must have 4 parameters)
+app.use((err, req, res, next) => {
+  console.error("Error:", err);
+  res.status(err.status || 500).json({
+    status: "error",
+    message: err.message || "Something went wrong",
+  });
+});
+
+export default app;

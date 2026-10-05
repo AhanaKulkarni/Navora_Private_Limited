@@ -63,10 +63,10 @@ export default function Navbar() {
             {/* Main Links */}
             <ul className={`flex items-center gap-10 font-bold uppercase tracking-widest text-[11px] transition-colors ${isScrolled ? 'text-[#24439C]' : 'text-white'}`}>
               <li><Link href="/" className="hover:text-[#CEA72B] transition-colors drop-shadow-sm">Home</Link></li>
-              <li><Link href="#" className="hover:text-[#CEA72B] transition-colors drop-shadow-sm">Services</Link></li>
-              <li><Link href="#" className="hover:text-[#CEA72B] transition-colors drop-shadow-sm">Sectors</Link></li>
-              <li><Link href="#" className="hover:text-[#CEA72B] transition-colors drop-shadow-sm">About Us</Link></li>
-              <li><Link href="#" className="hover:text-[#CEA72B] transition-colors drop-shadow-sm">Contact Us</Link></li>
+              <li><Link href="/services" className="hover:text-[#CEA72B] transition-colors drop-shadow-sm">Services</Link></li>
+              <li><Link href="/sectors" className="hover:text-[#CEA72B] transition-colors drop-shadow-sm">Sectors</Link></li>
+              <li><Link href="/about" className="hover:text-[#CEA72B] transition-colors drop-shadow-sm">About Us</Link></li>
+              <li><Link href="/contact" className="hover:text-[#CEA72B] transition-colors drop-shadow-sm">Contact Us</Link></li>
             </ul>
           </div>
 
@@ -105,10 +105,10 @@ export default function Navbar() {
             </div>
             <div className="flex-1 flex flex-col p-8 gap-8">
               <Link href="/" onClick={() => setMobileMenuOpen(false)} className="text-3xl font-serif font-bold hover:text-[#CEA72B] transition-colors">Home</Link>
-              <Link href="#" onClick={() => setMobileMenuOpen(false)} className="text-3xl font-serif font-bold hover:text-[#CEA72B] transition-colors">Services</Link>
-              <Link href="#" onClick={() => setMobileMenuOpen(false)} className="text-3xl font-serif font-bold hover:text-[#CEA72B] transition-colors">Sectors</Link>
-              <Link href="#" onClick={() => setMobileMenuOpen(false)} className="text-3xl font-serif font-bold hover:text-[#CEA72B] transition-colors">About Us</Link>
-              <Link href="#" onClick={() => setMobileMenuOpen(false)} className="text-3xl font-serif font-bold hover:text-[#CEA72B] transition-colors">Contact Us</Link>
+              <Link href="/services" onClick={() => setMobileMenuOpen(false)} className="text-3xl font-serif font-bold hover:text-[#CEA72B] transition-colors">Services</Link>
+              <Link href="/sectors" onClick={() => setMobileMenuOpen(false)} className="text-3xl font-serif font-bold hover:text-[#CEA72B] transition-colors">Sectors</Link>
+              <Link href="/about" onClick={() => setMobileMenuOpen(false)} className="text-3xl font-serif font-bold hover:text-[#CEA72B] transition-colors">About Us</Link>
+              <Link href="/contact" onClick={() => setMobileMenuOpen(false)} className="text-3xl font-serif font-bold hover:text-[#CEA72B] transition-colors">Contact Us</Link>
               
               <div className="mt-auto flex flex-col gap-4">
                 <button className="w-full bg-[#CEA72B] text-white py-4 rounded-xl font-bold uppercase tracking-widest text-sm">Upload CV</button>

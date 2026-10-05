@@ -1,0 +1,57 @@
+# =========================
+# Node Modules
+# =========================
+# Ignore node_modules in all folders
+node_modules/
+
+# =========================
+# Logs
+# =========================
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# =========================
+# Environment Variables
+# =========================
+# Ignore all env files
+*.env
+*.env.local
+*.env.*.local
+
+# =========================
+# OS Generated Files
+# =========================
+.DS_Store
+Thumbs.db
+
+# =========================
+# Build/Output Directories
+# =========================
+dist/
+build/
+.cache/
+coverage/
+
+# =========================
+# Temporary / Backup Files
+# =========================
+*.log
+*.bak
+*.tmp
+*.swp
+*~
+
+# =========================
+# IDE/Editor Configs
+# =========================
+.idea/
+*.sublime-*
+.vscode/
+
+# =========================
+# Optional: Client-side build outputs (Next.js)
+# =========================
+.next/
+out/
