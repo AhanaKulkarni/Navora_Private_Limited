@@ -17,7 +17,7 @@ interface RolesGridProps {
 
 export default function RolesGrid({ roles, container, item }: RolesGridProps) {
   return (
-    <section className="mx-auto max-w-7xl px-6 py-32">
+    <section className="mx-auto max-w-7xl px-6 py-10">
       <h1 className="mb-4 text-3xl font-medium text-[#0B1F6A] sm:text-4xl md:text-5xl lg:text-6xl">
         Roles We Recruit
       </h1>

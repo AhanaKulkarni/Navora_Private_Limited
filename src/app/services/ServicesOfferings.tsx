@@ -20,7 +20,7 @@ export default function ServicesOfferings({
 }: ServicesOfferingsProps) {
   return (
     <section
-      className="bg-white py-32"
+      className="bg-white py-12"
       aria-labelledby="services-offerings-heading"
     >
       <div className="mx-auto grid max-w-7xl grid-cols-1 items-start gap-20 px-6 lg:grid-cols-2">

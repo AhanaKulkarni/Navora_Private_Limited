@@ -14,7 +14,7 @@ type Job = {
   createdAt: string;
 };
 
-export default function JobList() {
+export default function JobList({ initialJobs = [] }: { initialJobs?: Job[] }) {
   const router = useRouter();
   const API_URL = process.env.NEXT_PUBLIC_API_URL;
   console.log("PRODUCTION API URL:", API_URL);
@@ -40,6 +40,12 @@ export default function JobList() {
   };
 
   useEffect(() => {
+    if (initialJobs && initialJobs.length > 0) {
+      setJobs(initialJobs);
+      setLoading(false);
+      return;
+    }
+    
     if (typeof window === "undefined") return; // server check
 
     const saved = sessionStorage.getItem("jobs");
@@ -47,33 +53,9 @@ export default function JobList() {
       setJobs(JSON.parse(saved));
       setLoading(false); // already have jobs, no need to fetch
     } else {
-      // fetch from API here
-      const controller = new AbortController();
-
-      const fetchJobs = async () => {
-        try {
-          const res = await fetch(`${API_URL}/api/jobs`, {
-            signal: controller.signal,
-          });
-          const result = await res.json();
-          const activeJobs = result.data.filter(
-            (job: Job) => job.isActive && job._id && job.title && job.location,
-          );
-          setJobs(activeJobs);
-          sessionStorage.setItem("jobs", JSON.stringify(activeJobs));
-        } catch (err: any) {
-          if (err.name === "AbortError") return;
-          setError("Unable to load jobs at the moment.");
-        } finally {
-          setLoading(false);
-        }
-      };
-
-      fetchJobs();
-
-      return () => controller.abort();
+      setLoading(false);
     }
-  }, [API_URL]);
+  }, [initialJobs]);
 
   return (
     <section

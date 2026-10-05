@@ -1,8 +1,8 @@
 import type { Metadata, Viewport } from "next";
 import { Inter, Playfair_Display } from "next/font/google";
 import "./globals.css";
-import Navbar from "@/components/layout/Navbar";
-import Footer from "@/components/layout/Footer";
+import Navbar from "@/components/navora-components/Navbar";
+import Footer from "@/components/navora-components/Footer";
 import Chatbot from "@/components/Chatbot";
 
 const inter = Inter({ subsets: ["latin"], variable: '--font-sans' });
