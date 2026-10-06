@@ -78,7 +78,7 @@ const TESTIMONIALS: Testimonial[] = [
 
 const SLIDE_DELAY = 8000;
 
-export default function TestimonialSlider() {
+export default function TestimonialSlider({ initialTestimonials }: { initialTestimonials?: any[] }) {
   const [activeIndex, setActiveIndex] = useState(0);
   const [progress, setProgress] = useState(0);
   const intervalRef = useRef<NodeJS.Timeout | null>(null);
@@ -99,7 +99,7 @@ export default function TestimonialSlider() {
     };
   }, [activeIndex]);
 
-  if (!TESTIMONIALS.length) return null;
+  
 
   return (
     <>
@@ -146,7 +146,7 @@ export default function TestimonialSlider() {
           </div>
 
           {/* ---------------- CONTENT AREA ---------------- */}
-          <Testimonials />
+          <Testimonials items={initialTestimonials} />
 
           <p className="mt-4 text-center text-sm text-slate-500">
             “Every journey is unique — we’re grateful to be part of theirs.”
@@ -156,3 +156,4 @@ export default function TestimonialSlider() {
     </>
   );
 }
+

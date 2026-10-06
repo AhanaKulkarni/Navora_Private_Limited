@@ -110,7 +110,26 @@ export default function Nav() {
                   onClick={() => router.push(`/contact`)}
                 >
                   Contact Us
-                </a>
+              </a>
+            </li>
+            <li>
+              <a
+                href="/admin/login"
+                className="hover:bg-primary/10 hover:text-secondary block rounded-lg px-2 py-2 transition hover:font-bold hover:text-[#CEA72B]"
+              >
+                Admin Portal
+              </a>
+            </li>
+              <li>
+                <div className="relative group">
+                  <button className="hover:text-[#CEA72B] flex items-center gap-1">
+                    More
+                    <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" /></svg>
+                  </button>
+                  <div className="absolute right-0 top-full mt-2 w-48 bg-white shadow-lg rounded-md overflow-hidden hidden group-hover:block border border-gray-100">
+                    <a href="/admin/login" className="block px-4 py-2 text-sm text-gray-700 hover:bg-slate-50 hover:text-[#24439C]">Admin Portal</a>
+                  </div>
+                </div>
               </li>
             </ul>
           </div>
@@ -206,12 +225,21 @@ export default function Nav() {
               onClick={() => router.push(`/contact`)}
             >
               Contact Us
-            </a>
-          </li>
+              </a>
+            </li>
+            <li>
+              <a
+                href="/admin/login"
+                className="hover:bg-primary/10 hover:text-secondary block rounded-lg px-2 py-2 transition hover:font-bold hover:text-[#CEA72B]"
+              >
+                Admin Portal
+              </a>
+            </li>
         </ul>
       </div>
     </nav>
   );
 }
+
 
 

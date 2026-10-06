@@ -4,9 +4,7 @@ import TestimonialSliderClient from "@/components/navora-components/TestimonialS
 import prisma from "@/lib/prisma";
 
 export default async function Home() {
-  // Fetch up to 9 recent active jobs
   const prismaJobs = await prisma.job.findMany({
-    
     orderBy: { createdAt: "desc" },
     take: 24,
   });
@@ -14,19 +12,30 @@ export default async function Home() {
   const jobs = prismaJobs.map((job) => ({
     _id: job.id,
     title: job.title,
-    department: "",
+    department: job.department || "",
     location: job.location,
-    type: "Permanent",
+    type: job.type || "Permanent",
     isActive: true,
     description: job.description || "",
     createdAt: job.createdAt.toISOString(),
+  }));
+
+  const prismaTestimonials = await prisma.testimonial.findMany({
+    orderBy: { createdAt: "desc" },
+  });
+
+  const testimonials = prismaTestimonials.map((t) => ({
+    name: t.name,
+    title: t.position,
+    quote: t.content,
+    image: "/candidates/candidate.png"
   }));
 
   return (
     <div>
       <HeroSection />
       <CurrentOpening initialJobs={jobs} />
-      <TestimonialSliderClient />
+      <TestimonialSliderClient initialTestimonials={testimonials} />
     </div>
   );
 }

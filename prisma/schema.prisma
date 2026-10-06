@@ -12,6 +12,8 @@ model Job {
   title        String
   location     String
   salary       String?
+  department   String?
+  type         String?
   description  String
   requirements String
   createdAt    DateTime @default(now())

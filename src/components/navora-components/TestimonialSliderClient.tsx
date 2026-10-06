@@ -6,6 +6,6 @@ const TestimonialSlider = dynamic(() => import("./TestimonialSlider"), {
   ssr: false,
 });
 
-export default function TestimonialSliderClient() {
-  return <TestimonialSlider />;
+export default function TestimonialSliderClient({ initialTestimonials }: { initialTestimonials?: any[] }) {
+  return <TestimonialSlider initialTestimonials={initialTestimonials} />;
 }
