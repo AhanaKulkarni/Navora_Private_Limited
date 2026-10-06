@@ -3,7 +3,7 @@ import { useState, useEffect } from "react";
 import React from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { useRouter } from "next/navigation";
+import { useRouter, usePathname } from "next/navigation";
 import { Tinos } from "next/font/google";
 
 const tinos = Tinos({
@@ -15,6 +15,9 @@ export default function Nav() {
   const router = useRouter();
   const [open, setOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+  const pathname = usePathname();
+  const isHomePage = pathname === "/";
+  const shouldBeSolid = !isHomePage || isScrolled;
   useEffect(() => {
     const handleScroll = () => setIsScrolled(window.scrollY > 20);
     window.addEventListener("scroll", handleScroll);
@@ -24,7 +27,7 @@ export default function Nav() {
   const menuItems = ["Home", "Services", "About", "Contact"];
 
   return (
-    <nav className={`fixed top-0 left-0 z-50 h-28 w-full transition-all duration-300 ${isScrolled ? "bg-white/95 backdrop-blur-md shadow-sm border-b border-gray-100" : "bg-transparent"} border-t-4 border-t-[#CEA72B]`}>
+    <nav className={`fixed top-0 left-0 z-50 h-28 w-full transition-all duration-300 ${shouldBeSolid ? "bg-white/95 backdrop-blur-md shadow-sm border-b border-gray-100" : "bg-transparent"} border-t-4 border-t-[#CEA72B]`}>
       <div className="mx-auto flex h-full max-w-7xl items-center justify-between px-6">
         {/* Logo */}
         <div
