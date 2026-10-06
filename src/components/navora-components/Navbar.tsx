@@ -112,16 +112,7 @@ export default function Nav() {
                   Contact Us
               </a>
             </li>
-            <li>
-              <a
-                href="/admin/login"
-                className="hover:bg-primary/10 hover:text-secondary block rounded-lg px-2 py-2 transition hover:font-bold hover:text-[#CEA72B]"
-              >
-                Admin Portal
-              </a>
-            </li>
-              <li>
-                <div className="relative group">
+            <li>`n                <div className="relative group">
                   <button className="hover:text-[#CEA72B] flex items-center gap-1">
                     More
                     <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" /></svg>
@@ -240,6 +231,7 @@ export default function Nav() {
     </nav>
   );
 }
+
 
 
 
