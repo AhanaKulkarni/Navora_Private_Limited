@@ -15,6 +15,7 @@ export default function Nav() {
   const router = useRouter();
   const [open, setOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+  const [moreOpen, setMoreOpen] = useState(false);
   const pathname = usePathname();
   const isHomePage = pathname === "/";
   const shouldBeSolid = !isHomePage || isScrolled;
@@ -112,13 +113,23 @@ export default function Nav() {
                   Contact Us
               </a>
             </li>
-            <li>`n                <div className="relative group">
-                  <button className="hover:text-[#CEA72B] flex items-center gap-1">
+            <li>
+                <div 
+                  className="relative group" 
+                  onMouseEnter={() => setMoreOpen(true)} 
+                  onMouseLeave={() => setMoreOpen(false)}
+                >
+                  <button 
+                    onClick={() => setMoreOpen(!moreOpen)}
+                    className="hover:text-[#CEA72B] flex items-center gap-1 py-2"
+                  >
                     More
                     <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" /></svg>
                   </button>
-                  <div className="absolute right-0 top-full mt-2 w-48 bg-white shadow-lg rounded-md overflow-hidden hidden group-hover:block border border-gray-100">
-                    <a href="/admin/login" className="block px-4 py-2 text-sm text-gray-700 hover:bg-slate-50 hover:text-[#24439C]">Admin Portal</a>
+                  <div className={`absolute right-0 top-full w-48 pt-2 ${moreOpen ? "block" : "hidden group-hover:block"}`}>
+                    <div className="bg-white shadow-lg rounded-md overflow-hidden border border-gray-100">
+                      <a href="/admin/login" className="block px-4 py-2 text-sm text-gray-700 hover:bg-slate-50 hover:text-[#24439C]">Admin Portal</a>
+                    </div>
                   </div>
                 </div>
               </li>
@@ -231,6 +242,7 @@ export default function Nav() {
     </nav>
   );
 }
+
 
 
 
