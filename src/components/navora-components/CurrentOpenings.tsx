@@ -148,7 +148,7 @@ export default function JobList({ initialJobs = [] }: { initialJobs?: Job[] }) {
                       {job.description}
                     </p>
 
-                    <div className="mt-auto flex gap-3 pt-6">
+                    <div className="mt-auto flex flex-col min-\[400px\]:flex-row gap-3 pt-6">
                       <button
                         onClick={() => router.push(/jobs/ + job._id)}
                         className="flex-1 rounded-xl border-2 border-[#24439C] px-4 py-2.5 text-sm font-bold text-[#24439C] transition-all hover:bg-[#24439C] hover:text-white"

@@ -34,7 +34,7 @@ export default function Nav() {
           className="flex cursor-pointer items-center gap-2"
           onClick={() => router.push("/")}
         >
-          <span className="text-2xl font-bold tracking-tight text-[#24439C]">Navora Private Limited</span>
+          <span className="text-xl md:text-2xl font-bold tracking-tight text-[#24439C]">Navora Private Limited</span>
         </div>
 
         {/* Desktop Menu */}

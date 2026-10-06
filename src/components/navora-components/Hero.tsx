@@ -56,17 +56,17 @@ const HeroSection: FC<HeroSectionProps> = ({
       {/* 2. Gradient Overlay for better text visibility */}
       <div className="absolute inset-0 z-10 bg-gradient-to-b from-white/90 via-white/40 to-black/60"></div>
 
-      <div className="//bg-red-500 relative z-10 mx-auto w-full max-w-7xl pt-36 pb-48">
+      <div className="//bg-red-500 relative z-10 mx-auto w-full max-w-7xl pt-16 pb-24 md:pt-36 md:pb-48">
         <div className="//bg-green-500 mx-4 flex justify-between">
           {/* Left Content */}
           <div className="//bg-blue-600 max-w-3xl">
-            <h1 className="mb-4 text-5xl font-medium tracking-tight text-black sm:text-6xl lg:text-7xl">
+            <h1 className="mb-4 text-4xl font-medium tracking-tight text-black sm:text-5xl lg:text-7xl">
               {title}
             </h1>
-            <h2 className="text-secondary mb-6 text-2xl font-light tracking-tighter sm:text-3xl">
+            <h2 className="text-secondary mb-6 text-xl font-light tracking-tighter sm:text-2xl md:text-3xl">
               {subtitle}
             </h2>
-            <p className="mb-8 text-lg font-normal text-white sm:text-xl">
+            <p className="mb-8 text-base font-normal text-white sm:text-lg md:text-xl">
               {description}
             </p>
             <div className="flex gap-4">
