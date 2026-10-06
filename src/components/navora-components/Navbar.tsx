@@ -1,5 +1,5 @@
 "use client";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import React from "react";
 import Image from "next/image";
 import Link from "next/link";
@@ -14,10 +14,17 @@ const tinos = Tinos({
 export default function Nav() {
   const router = useRouter();
   const [open, setOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
+  useEffect(() => {
+    const handleScroll = () => setIsScrolled(window.scrollY > 20);
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   const menuItems = ["Home", "Services", "About", "Contact"];
 
   return (
-    <nav className="//border-b fixed top-0 left-0 z-50 h-28 w-full border-t-4 border-t-[#CEA72B] border-b-[#CEA72B] bg-white">
+    <nav className={ixed top-0 left-0 z-50 h-28 w-full transition-all duration-300  border-t-4 border-t-[#CEA72B]}>
       <div className="mx-auto flex h-full max-w-7xl items-center justify-between px-6">
         {/* Logo */}
         <div

@@ -41,22 +41,22 @@ const HeroSection: FC<HeroSectionProps> = ({
 }) => {
   return (
     // Hero Section: Full viewport height/width, relative for the image/overlay
-    <section className="relative flex w-full items-center justify-start overflow-hidden pt-28 text-white">
+    <section className="relative flex w-full min-h-[85vh] items-center justify-start overflow-hidden pt-28 pb-20 text-white">
       {/* 1. Background Image (Next.js Image for optimization) */}
       <Image
         src={backgroundImageUrl}
         alt="A large container ship at sea, symbolizing maritime careers"
-        layout="fill"
-        objectFit="cover"
+        fill
+        className="object-cover z-0"
         priority={true} // Load the hero image early
         quality={100}
-        className="z-0"
+        
       />
 
       {/* 2. Gradient Overlay for better text visibility */}
-      <div className="absolute inset-0 z-10 bg-linear-to-b from-white to-transparent"></div>
+      <div className="absolute inset-0 z-10 bg-gradient-to-b from-white/90 via-white/40 to-black/60"></div>
 
-      <div className="//bg-red-500 relative z-10 mx-auto w-full max-w-7xl pt-28 pb-36">
+      <div className="//bg-red-500 relative z-10 mx-auto w-full max-w-7xl pt-36 pb-48">
         <div className="//bg-green-500 mx-4 flex justify-between">
           {/* Left Content */}
           <div className="//bg-blue-600 max-w-3xl">
