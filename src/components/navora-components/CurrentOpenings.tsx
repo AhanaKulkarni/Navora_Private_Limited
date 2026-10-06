@@ -1,7 +1,8 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { useRouter } from "next/navigation";\nimport { MapPin, Briefcase, Calendar, Hash } from "lucide-react";\n
+import { useRouter } from "next/navigation";
+import { MapPin, Briefcase, Calendar, Hash } from "lucide-react";
 
 type Job = {
   _id: string;
@@ -177,3 +178,4 @@ export default function JobList({ initialJobs = [] }: { initialJobs?: Job[] }) {
     </section>
   );
 }
+
