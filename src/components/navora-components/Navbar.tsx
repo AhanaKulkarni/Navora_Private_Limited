@@ -24,7 +24,7 @@ export default function Nav() {
   const menuItems = ["Home", "Services", "About", "Contact"];
 
   return (
-    <nav className={ixed top-0 left-0 z-50 h-28 w-full transition-all duration-300  border-t-4 border-t-[#CEA72B]}>
+    <nav className={`fixed top-0 left-0 z-50 h-28 w-full transition-all duration-300 ${isScrolled ? "bg-white/95 backdrop-blur-md shadow-sm border-b border-gray-100" : "bg-transparent"} border-t-4 border-t-[#CEA72B]`}>
       <div className="mx-auto flex h-full max-w-7xl items-center justify-between px-6">
         {/* Logo */}
         <div
@@ -210,3 +210,5 @@ export default function Nav() {
     </nav>
   );
 }
+
+
