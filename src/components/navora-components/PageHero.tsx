@@ -9,7 +9,7 @@ interface PageHeroProps {
 
 export default function PageHero({ title, description }: PageHeroProps) {
   return (
-    <section className="relative flex h-[340px] items-center justify-center overflow-hidden bg-[#0B1F6A]">
+    <section className="relative flex h-[340px] items-center justify-center overflow-hidden bg-[#0B1F6A] pt-28">
       {/* Background circles */}
       <div className="absolute -top-24 -left-24 h-96 w-96 rounded-full bg-white/10" />
       <div className="absolute right-[-140px] bottom-[-140px] h-[480px] w-[480px] rounded-full bg-white/10" />

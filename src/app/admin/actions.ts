@@ -8,7 +8,8 @@ export async function login(formData: FormData) {
   const password = formData.get("password");
 
   if (email === "admin@navora.com" && password === "admin123") {
-    cookies().set("admin_auth", "true", { httpOnly: true, secure: process.env.NODE_ENV === "production" });
+    const cookieStore = await cookies();
+    cookieStore.set("admin_auth", "true", { httpOnly: true, secure: process.env.NODE_ENV === "production" });
     redirect("/admin");
   } else {
     return { error: "Invalid credentials" };
@@ -16,6 +17,7 @@ export async function login(formData: FormData) {
 }
 
 export async function logout() {
-  cookies().delete("admin_auth");
+  const cookieStore = await cookies();
+  cookieStore.delete("admin_auth");
   redirect("/admin/login");
 }

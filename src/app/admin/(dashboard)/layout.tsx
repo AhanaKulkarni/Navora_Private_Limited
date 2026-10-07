@@ -4,12 +4,16 @@ import { cookies } from "next/headers";
 import { redirect } from "next/navigation";
 import { logout } from "../actions";
 
-export default function AdminLayout({
+export const dynamic = "force-dynamic";
+
+export default async function AdminLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
-  const auth = cookies().get("admin_auth");
+  const cookieStore = await cookies();
+  const auth = cookieStore.get("admin_auth");
+  
   if (!auth) {
     redirect("/admin/login");
   }
@@ -28,10 +32,6 @@ export default function AdminLayout({
           <Briefcase className="w-5 h-5" />
           Jobs
         </Link>
-        {/* <Link href="/admin/blog" className="flex items-center gap-3 px-4 py-3 text-gray-700 hover:bg-slate-50 hover:text-[#CEA72B] rounded-lg transition-colors">
-          <FileText className="w-5 h-5" />
-          Blog & News
-        </Link> */}
         <Link href="/admin/testimonials" className="flex items-center gap-3 px-4 py-3 text-gray-700 hover:bg-slate-50 hover:text-[#CEA72B] rounded-lg transition-colors">
           <Users className="w-5 h-5" />
           Testimonials
