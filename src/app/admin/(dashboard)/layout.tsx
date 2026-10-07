@@ -19,7 +19,7 @@ export default async function AdminLayout({
   }
 
   return (
-    <div className="flex min-h-screen bg-slate-100 mt-[-6rem]">
+    <div className="flex min-h-screen bg-slate-100 ">
       {/* Sidebar */}
       <aside className="w-64 bg-white border-r border-gray-200 pt-28 px-4 flex flex-col gap-2 relative">
         <h2 className="text-xl font-bold text-[#24439C] px-4 mb-4">Admin Portal</h2>
