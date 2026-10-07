@@ -60,13 +60,13 @@ const HeroSection: FC<HeroSectionProps> = ({
         <div className="//bg-green-500 mx-4 flex justify-between">
           {/* Left Content */}
           <div className="//bg-blue-600 max-w-3xl">
-            <h1 className="mb-4 text-4xl font-medium tracking-tight text-black sm:text-5xl lg:text-7xl">
+            <h1 className="mb-4 text-4xl font-serif font-bold tracking-tight text-black sm:text-5xl lg:text-7xl">
               {title}
             </h1>
-            <h2 className="text-secondary mb-6 text-xl font-light tracking-tighter sm:text-2xl md:text-3xl">
+            <h2 className="text-secondary mb-6 text-xl font-normal tracking-tight sm:text-2xl md:text-3xl">
               {subtitle}
             </h2>
-            <p className="mb-8 text-base font-normal text-white sm:text-lg md:text-xl">
+            <p className="mb-10 text-base font-medium text-white/90 sm:text-lg md:text-xl max-w-2xl">
               {description}
             </p>
             <div className="flex gap-4">

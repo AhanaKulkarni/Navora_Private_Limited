@@ -12,6 +12,8 @@
     --primary: #CEA72B;
     --secondary: #24439C;
     --font-display: 'Inter', sans-serif;
+    --font-serif: var(--font-serif);
+    --font-sans: var(--font-sans);
 }
 
 @layer base {

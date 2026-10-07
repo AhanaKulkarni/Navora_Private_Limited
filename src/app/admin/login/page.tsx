@@ -31,7 +31,7 @@ export default function LoginPage() {
               type="email" 
               name="email" 
               required 
-              defaultValue="admin@navora.com"
+              
               className="w-full px-4 py-2 border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#CEA72B]"
             />
           </div>
@@ -41,7 +41,7 @@ export default function LoginPage() {
               type="password" 
               name="password" 
               required 
-              defaultValue="admin123"
+              
               className="w-full px-4 py-2 border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#CEA72B]"
             />
           </div>
@@ -52,9 +52,7 @@ export default function LoginPage() {
             Sign In
           </button>
         </form>
-        <p className="text-xs text-slate-500 text-center mt-4">
-          Dummy credentials pre-filled for testing.
-        </p>
+        
       </div>
     </div>
   );

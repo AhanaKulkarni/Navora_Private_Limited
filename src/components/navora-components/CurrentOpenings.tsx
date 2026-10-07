@@ -67,10 +67,10 @@ export default function JobList({ initialJobs = [] }: { initialJobs?: Job[] }) {
         {/* ---------------- HEADER (ALWAYS VISIBLE) ---------------- */}
         <div className="flex justify-between py-4">
           <div>
-            <h1 className="text-primary text-2xl md:text-4xl">
+            <h1 className="text-primary text-2xl md:text-5xl font-serif font-bold tracking-tight">
               Current Openings
             </h1>
-            <h2 className="text-2xl md:text-4xl">Be the First to Apply</h2>
+            <h2 className="text-2xl md:text-5xl font-serif tracking-tight text-slate-800">Be the First to Apply</h2>
           </div>
           {/* <div>
             <button className="rounded-full border border-blue-500 px-6 py-2 transition hover:bg-blue-500 hover:text-white">

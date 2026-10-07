@@ -4,10 +4,12 @@ import { cookies } from "next/headers";
 import { redirect } from "next/navigation";
 
 export async function login(formData: FormData) {
-  const email = formData.get("email");
-  const password = formData.get("password");
+  const email = formData.get("email") as string;
+  const password = formData.get("password") as string;
+  
+  const validEmails = ["roohi@maritimesolutionsltd.com", "ahanak@aetheronai.in"];
 
-  if (email === "admin@navora.com" && password === "admin123") {
+  if (validEmails.includes(email) && password === "admin@2026") {
     const cookieStore = await cookies();
     cookieStore.set("admin_auth", "true", { httpOnly: true, secure: process.env.NODE_ENV === "production" });
     redirect("/admin");

@@ -20,7 +20,7 @@ export default function PageHero({ title, description }: PageHeroProps) {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.7 }}
-          className="mb-3 text-4xl font-bold text-white lg:text-5xl"
+          className="mb-3 text-4xl font-serif font-bold tracking-tight text-white lg:text-5xl"
         >
           {title}
         </motion.h1>

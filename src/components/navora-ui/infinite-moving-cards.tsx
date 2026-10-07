@@ -98,7 +98,7 @@ export const InfiniteMovingCards = ({
                 className="user-select-none pointer-events-none absolute -top-0.5 -left-0.5 -z-1 h-[calc(100%_+_4px)] w-[calc(100%_+_4px)]"
               ></div>
               <div className="relative z-20 flex-1 overflow-y-auto pr-4 scrollbar-thin scrollbar-thumb-zinc-300">
-                <span className="text-sm leading-[1.6] font-normal text-neutral-800 dark:text-gray-100 whitespace-pre-wrap">
+                <span className="text-base leading-relaxed font-serif italic text-slate-700 dark:text-gray-100 whitespace-pre-wrap">
                   {item.quote}
                 </span>
               </div>
