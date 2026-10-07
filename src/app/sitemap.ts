@@ -5,7 +5,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const baseUrl = 'https://navora-private-limited.vercel.app';
   
   // Fetch dynamic routes
-  const jobs = await prisma.job.findMany();
+  let jobs: any[] = []; try { jobs = await prisma.job.findMany(); } catch(e){}
   
   const jobUrls = jobs.map((job) => ({
     url: `${baseUrl}/jobs/${job.id}`,

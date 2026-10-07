@@ -8,7 +8,7 @@ export default function NewJob() {
   async function createJob(formData: FormData) {
     "use server";
     
-    await prisma.job.create({
+    try { await prisma.job.create({
       data: {
         title: formData.get('title') as string,
         location: formData.get('location') as string,
@@ -18,7 +18,7 @@ export default function NewJob() {
         description: formData.get('description') as string,
         requirements: formData.get('requirements') as string,
       }
-    });
+    }); } catch(e) { console.error(e) }
 
     revalidatePath('/admin/jobs');
     revalidatePath('/');

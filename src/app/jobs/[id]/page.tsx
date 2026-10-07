@@ -6,9 +6,9 @@ import Link from "next/link";
 export default async function JobDetails({ params }: { params: Promise<{ id: string }> }) {
   const { id } = await params;
   
-  const job = await prisma.job.findUnique({
+  let job: any = null; try { job = await prisma.job.findUnique({
     where: { id }
-  });
+  }); } catch(e) {}
 
   if (!job) {
     notFound();

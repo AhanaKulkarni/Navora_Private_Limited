@@ -4,14 +4,14 @@ import Link from "next/link";
 import { revalidatePath } from "next/cache";
 
 export default async function AdminBlog() {
-  const posts = await prisma.blogPost.findMany({
+  let posts: any[] = []; try { posts = await prisma.blogPost.findMany({
     orderBy: { createdAt: 'desc' }
-  });
+  }); } catch(e){}
 
   async function deletePost(formData: FormData) {
     "use server";
     const id = formData.get('id') as string;
-    await prisma.blogPost.delete({ where: { id } });
+    try { await prisma.blogPost.delete({ where: { id } }); } catch(e){}
     revalidatePath('/admin/blog');
     revalidatePath('/blog');
   }

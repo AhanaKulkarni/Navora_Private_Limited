@@ -8,13 +8,13 @@ export default function NewTestimonial() {
   async function createTestimonial(formData: FormData) {
     "use server";
     
-    await prisma.testimonial.create({
+    try { await prisma.testimonial.create({
       data: {
         name: formData.get('name') as string,
         position: formData.get('position') as string,
         content: formData.get('content') as string,
       }
-    });
+    }); } catch(e) { console.error(e) }
 
     revalidatePath('/admin/testimonials');
     revalidatePath('/');

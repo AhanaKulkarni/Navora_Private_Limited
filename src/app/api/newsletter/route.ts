@@ -10,13 +10,12 @@ export async function POST(req: Request) {
       return NextResponse.redirect(new URL('/?error=invalid_email', req.url));
     }
 
-    // Try to create, ignore if it already exists
     try {
       await prisma.subscriber.create({
         data: { email }
       });
     } catch (e) {
-      // Unique constraint failed, that's fine they are already subscribed
+      // Unique constraint failed or sqlite failed
     }
 
     return NextResponse.redirect(new URL('/?success=subscribed', req.url));

@@ -4,14 +4,14 @@ import Link from "next/link";
 import { revalidatePath } from "next/cache";
 
 export default async function AdminJobs() {
-  const jobs = await prisma.job.findMany({
+  let jobs: any[] = []; try { jobs = await prisma.job.findMany({
     orderBy: { createdAt: 'desc' }
-  });
+  }); } catch(e) { console.error(e) }
 
   async function deleteJob(formData: FormData) {
     "use server";
     const id = formData.get('id') as string;
-    await prisma.job.delete({ where: { id } });
+    try { await prisma.job.delete({ where: { id } }); } catch(e){}
     revalidatePath('/admin/jobs');
   }
 

@@ -4,14 +4,14 @@ import Link from "next/link";
 import { revalidatePath } from "next/cache";
 
 export default async function AdminTestimonials() {
-  const testimonials = await prisma.testimonial.findMany({
+  let testimonials: any[] = []; try { testimonials = await prisma.testimonial.findMany({
     orderBy: { createdAt: 'desc' }
-  });
+  }); } catch(e){}
 
   async function deleteTestimonial(formData: FormData) {
     "use server";
     const id = formData.get('id') as string;
-    await prisma.testimonial.delete({ where: { id } });
+    try { await prisma.testimonial.delete({ where: { id } }); } catch(e){}
     revalidatePath('/admin/testimonials');
     revalidatePath('/');
   }

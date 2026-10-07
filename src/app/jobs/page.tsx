@@ -3,9 +3,9 @@ import { Briefcase, MapPin, DollarSign, Search, Filter, Clock, ChevronRight } fr
 import Link from "next/link";
 
 export default async function JobsPage() {
-  const jobs = await prisma.job.findMany({
+  let jobs: any[] = []; try { jobs = await prisma.job.findMany({
     orderBy: { createdAt: 'desc' }
-  });
+  }); } catch(e){}
 
   return (
     <div className="min-h-screen bg-slate-50 text-gray-900">

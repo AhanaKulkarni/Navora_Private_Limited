@@ -2,10 +2,10 @@ import prisma from "@/lib/prisma";
 import { Briefcase, FileText, Users, Mail } from "lucide-react";
 
 export default async function AdminDashboard() {
-  const jobsCount = await prisma.job.count();
-  const blogCount = await prisma.blogPost.count();
-  const testimonialCount = await prisma.testimonial.count();
-  const subCount = await prisma.subscriber.count();
+  let jobsCount = 0; try { jobsCount = await prisma.job.count(); } catch(e){ console.error(e) }
+  let blogCount = 0; try { blogCount = await prisma.blogPost.count(); } catch(e){}
+  let testimonialCount = 0; try { testimonialCount = await prisma.testimonial.count(); } catch(e){}
+  let subCount = 0; try { subCount = await prisma.subscriber.count(); } catch(e){}
 
   const stats = [
     { name: "Active Jobs", count: jobsCount, icon: Briefcase, color: "bg-blue-100 text-blue-600" },
@@ -17,6 +17,7 @@ export default async function AdminDashboard() {
   return (
     <div>
       <h1 className="text-3xl font-bold text-gray-800 mb-8">Dashboard Overview</h1>
+<div className="mb-8 p-4 bg-orange-50 text-orange-800 rounded-lg text-sm border border-orange-200"><strong>Note for Vercel deployment:</strong> You are using a local SQLite database which is read-only in Vercel Serverless. Saving new data will fail. Please migrate to a remote database like Vercel Postgres to enable write operations.</div>
       
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
         {stats.map((stat) => (

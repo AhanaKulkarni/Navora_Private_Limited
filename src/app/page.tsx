@@ -4,10 +4,10 @@ import TestimonialSliderClient from "@/components/navora-components/TestimonialS
 import prisma from "@/lib/prisma";
 
 export default async function Home() {
-  const prismaJobs = await prisma.job.findMany({
+  let prismaJobs: any[] = []; try { prismaJobs = await prisma.job.findMany({
     orderBy: { createdAt: "desc" },
     take: 24,
-  });
+  }); } catch(e){}
 
   const jobs = prismaJobs.map((job) => ({
     _id: job.id,
@@ -20,9 +20,9 @@ export default async function Home() {
     createdAt: job.createdAt.toISOString(),
   }));
 
-  const prismaTestimonials = await prisma.testimonial.findMany({
+  let prismaTestimonials: any[] = []; try { prismaTestimonials = await prisma.testimonial.findMany({
     orderBy: { createdAt: "desc" },
-  });
+  }); } catch(e){}
 
   const testimonials = prismaTestimonials.map((t) => ({
     name: t.name,
