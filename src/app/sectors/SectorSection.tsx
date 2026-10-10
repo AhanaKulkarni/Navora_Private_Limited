@@ -1,86 +1,33 @@
-﻿"use client";
 
-import Image from "next/image";
-import { motion } from "framer-motion";
+import React from 'react';
+import Image from 'next/image';
 
-type Sector = {
-  title: string;
-  description: string;
-  image: string;
-  points: string[];
-};
-
-type Props = Sector & {
-  reverse?: boolean;
-  index?: number;
-};
-
-export default function SectorSection({
-  title,
-  description,
-  image,
-  points,
-  reverse = false,
-  index = 0,
-}: Props) {
-  const isCream = index % 2 !== 0;
-
+export default function SectorSection({ title, description, image, points, index, reverse }: any) {
   return (
-    <section
-      className={`w-full overflow-hidden py-8 lg:py-24 ${
-        isCream ? "bg-[#f9f9f9]" : "bg-white"
-      }`}
-    >
-      <div className="mx-auto grid max-w-7xl grid-cols-1 items-center gap-8 px-6 lg:grid-cols-2">
-        {/* TEXT */}
-        <motion.div
-          initial={{ opacity: 0, x: reverse ? 80 : -80 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.7 }}
-          className={reverse ? "lg:order-2" : ""}
-        >
-          <h2 className="mb-2 text-3xl font-bold text-[#0B1F6A] md:text-3xl md:font-light lg:text-5xl">
+    <section className={`py-24 ${index % 2 === 0 ? 'bg-warm-foam text-abyss' : 'bg-white text-abyss'} border-b border-abyss/5`}>
+      <div className="max-w-[90rem] mx-auto px-6 md:px-12 grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-center">
+        <div className={`${reverse ? 'lg:order-2' : 'lg:order-1'} relative aspect-square lg:aspect-[4/3] w-full overflow-hidden bg-abyss border border-abyss/10`}>
+          <Image src={image} alt={title} fill className="object-cover opacity-80 mix-blend-luminosity hover:mix-blend-normal hover:opacity-100 transition-all duration-700" />
+          <div className="absolute bottom-6 left-6 font-mono text-[10px] text-brass-signal uppercase tracking-widest">
+            SECTOR / {String(index + 1).padStart(2, '0')}
+          </div>
+        </div>
+        <div className={`${reverse ? 'lg:order-1' : 'lg:order-2'}`}>
+          <h2 className="text-4xl font-heading font-medium tracking-tight mb-8">
             {title}
           </h2>
-
-          <p className="mb-2 max-w-xl leading-tight text-gray-600 md:mb-4">
+          <p className="text-abyss/70 font-sans leading-relaxed mb-10 text-lg">
             {description}
           </p>
-
-          <div className="border-t border-[#D6B25E]">
-            {points.map((item, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 15 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: index * 0.08 }}
-                className="hover:bg-primary border-b border-[#D6B25E] py-1 text-lg text-[#0B1F6A] transition-all duration-300 hover:pl-2 md:py-2 md:text-xl"
-              >
-                {item}
-              </motion.div>
+          <ul className="space-y-4">
+            {points.map((point: string, i: number) => (
+              <li key={i} className="flex items-center gap-4 text-sm font-sans text-abyss/80">
+                <span className="w-1.5 h-1.5 bg-brass-signal rounded-full shrink-0"></span>
+                {point}
+              </li>
             ))}
-          </div>
-        </motion.div>
-
-        {/* IMAGE */}
-        <motion.div
-          initial={{ opacity: 0, x: reverse ? -80 : 80 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.7 }}
-          className={`${reverse ? "lg:order-1" : ""} overflow-hidden`}
-        >
-          <Image
-            src={image}
-            alt={title}
-            width={700}
-            height={700}
-            className="h-auto w-full object-cover transition-transform duration-700 hover:scale-105"
-            priority
-          />
-        </motion.div>
+          </ul>
+        </div>
       </div>
     </section>
   );

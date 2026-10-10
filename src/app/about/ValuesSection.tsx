@@ -1,135 +1,36 @@
-﻿import Image from "next/image";
+
+import React from 'react';
 
 const values = [
-  {
-    title: "Veracity",
-    letter: "V",
-    description: [
-      "Honest role briefings",
-      "Real compensation ranges",
-      "Transparent risks",
-    ],
-  },
-  {
-    title: "Accountability",
-    letter: "V",
-    description: [
-      "Follow-through after joining",
-      "Ownership of outcomesâ€”not excuses.",
-    ],
-  },
-  {
-    title: "Long-Term Fit",
-    letter: "L",
-    description: [
-      "Hire for career alignment, cultural fit and sustainable growth",
-    ],
-  },
-  {
-    title: "Unbiased Judgement",
-    letter: "U",
-    description: [
-      "Evaluate people, not profiles",
-      "Decisions based on capability and intentâ€”not brand names or pedigree.",
-    ],
-  },
-  {
-    title: "Equity",
-    letter: "E",
-    description: [
-      "Treat all stakeholders fairly",
-      "Balanced representation of clients and candidates, no hidden agendas.",
-    ],
-  },
-  {
-    title: "Stewardship",
-    letter: "S",
-    description: [
-      "Handle careers with care",
-      "Every move entrusted to us is never traded for speed or fees",
-    ],
-  },
+  { title: "Integrity", desc: "Honesty and transparency in all our dealings." },
+  { title: "Excellence", desc: "Striving for the highest quality in everything we do." },
+  { title: "Collaboration", desc: "Working together to achieve common goals." },
+  { title: "Innovation", desc: "Constantly seeking better ways to serve our clients." }
 ];
 
 export default function ValuesSection() {
-
   return (
-    <>
-      <section className="w-full px-6 py-16 md:py-24 bg-white">
-        <div className="mx-auto max-w-6xl">
-          <div className="grid items-start gap-10 md:grid-cols-2 md:gap-16 mb-10">
-
-            {/* LEFT â€” TEXT */}
-            <div>
-              <h3 className="mb-4 text-2xl font-semibold md:text-4xl">
-                Our Values
-              </h3>
-
-              {/* Mobile Image */}
-              <div className="flex flex-col items-start md:hidden">
-                <div className="w-full max-w-xs pb-4 md:max-w-sm">
-                  <Image
-                    src="/about/values.jpg"
-                    alt="Our Values"
-                    width={400}
-                    height={400}
-                    className="object-cover"
-                  />
-                </div>
-              </div>
-
-              <p className="text-lg text-gray-800 md:text-xl">
-                At Navora, VALUES are not beliefs. They are behaviours.
-              </p>
-            </div>
-
-            {/* RIGHT â€” IMAGE (Desktop) */}
-            <div className="hidden flex-col items-center md:flex">
-              <div className="w-full max-w-xs md:max-w-sm">
-                <Image
-                  src="/about/values.jpg"
-                  alt="Our Values"
-                  width={400}
-                  height={200}
-                  className="object-cover"
-                />
-              </div>
-            </div>
-
+    <section className="py-32 bg-abyss text-warm-foam">
+      <div className="max-w-[90rem] mx-auto px-6 md:px-12">
+        <div className="mb-20">
+          <div className="flex items-center gap-4 mb-8 text-[10px] uppercase tracking-widest font-mono text-brass-signal">
+            <span className="w-6 h-px bg-brass-signal/50"></span>
+            OUR VALUES
           </div>
-
-
-
-          {/* VALUES GRID */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            {values.map((value) => (
-              <div
-                key={value.letter}
-                className="bg-slate-200/40 p-6 rounded-lg"
-              >
-                <div className="flex gap-2 items-center mb-4">
-                  <div className="text-3xl font-bold text-white bg-secondary w-12 h-12 flex items-center justify-center rounded-full">
-                    {value.letter}
-                  </div>
-                  <h4 className="text-2xl text-black font-semibold">
-                    {value.title}
-                  </h4>
-                </div>
-
-                <ul className="">
-                  {value.description.map((item, index) => (
-                    <li key={index} className="text-grey">
-                      {item}
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            ))}
-          </div>
-
+          <h2 className="text-4xl md:text-5xl font-heading font-medium tracking-tight max-w-2xl">
+            The principles that guide our navigation.
+          </h2>
         </div>
-      </section>
-    </>
-
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-x-12 gap-y-16 border-t border-warm-foam/10 pt-16">
+          {values.map((v, i) => (
+            <div key={i} className="group">
+              <div className="font-mono text-[10px] text-brass-signal mb-6">0{i+1}</div>
+              <h3 className="text-xl font-heading font-medium mb-4 group-hover:text-horizon-light transition-colors">{v.title}</h3>
+              <p className="font-sans text-warm-foam/60 leading-relaxed text-sm">{v.desc}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
   );
 }

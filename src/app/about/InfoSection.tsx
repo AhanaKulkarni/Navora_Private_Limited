@@ -1,60 +1,22 @@
-﻿import Image from "next/image";
 
-interface InfoSectionProps {
-  title: string;
-  description: string;
-  imageUrl: string;
-  bgColor?: string; // Tailwind class e.g. "bg-amber-300/5"
-}
+import React from 'react';
+import Image from 'next/image';
 
-export default function InfoSection({
-  title,
-  description,
-  imageUrl,
-  bgColor = "bg-amber-300/5",
-}: InfoSectionProps) {
+export default function InfoSection({ title, description, imageUrl, bgColor = "bg-white" }: any) {
   return (
-    <section className={`w-full px-6 py-16 md:py-24 ${bgColor}`}>
-      <div className="mx-auto max-w-6xl">
-        <div className="grid items-start gap-10 md:grid-cols-2 md:gap-16">
-          
-          {/* LEFT â€” TEXT */}
-          <div>
-            <h3 className="mb-4 text-2xl font-semibold md:text-4xl">
-              {title}
-            </h3>
-
-            {/* Mobile Image */}
-            <div className="flex flex-col items-start md:hidden">
-              <div className="w-full max-w-xs pb-4 md:max-w-sm">
-                <Image
-                  src={imageUrl}
-                  alt={title}
-                  width={400}
-                  height={400}
-                  className="object-cover"
-                />
-              </div>
-            </div>
-
-            <p className="text-lg text-gray-800 md:text-xl">
-              {description}
-            </p>
+    <section className={`py-24 ${bgColor} text-abyss border-t border-abyss/5`}>
+      <div className="max-w-[90rem] mx-auto px-6 md:px-12 grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-center">
+        <div className="order-2 lg:order-1 relative aspect-video lg:aspect-[4/3] w-full overflow-hidden border border-abyss/10 bg-abyss">
+          <Image src={imageUrl} alt={title} fill className="object-cover opacity-80 mix-blend-luminosity hover:mix-blend-normal hover:opacity-100 transition-all duration-700" />
+        </div>
+        <div className="order-1 lg:order-2">
+          <div className="flex items-center gap-4 mb-8 text-[10px] uppercase tracking-widest font-mono text-brass-signal">
+            <span className="w-6 h-px bg-brass-signal/50"></span>
+            {title}
           </div>
-
-          {/* RIGHT â€” IMAGE (Desktop) */}
-          <div className="hidden flex-col items-center md:flex">
-            <div className="w-full max-w-xs md:max-w-sm">
-              <Image
-                src={imageUrl}
-                alt={title}
-                width={400}
-                height={400}
-                className="object-cover"
-              />
-            </div>
-          </div>
-
+          <h2 className="text-3xl md:text-4xl font-accent italic tracking-tight mb-8 text-abyss/90">
+            {description}
+          </h2>
         </div>
       </div>
     </section>
