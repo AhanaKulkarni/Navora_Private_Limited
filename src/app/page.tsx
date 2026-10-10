@@ -3,6 +3,8 @@ import HeroSection from "@/components/navora-components/Hero";
 import TestimonialSliderClient from "@/components/navora-components/TestimonialSliderClient";
 import prisma from "@/lib/prisma";
 
+export const dynamic = "force-dynamic";
+
 export default async function Home() {
   let prismaJobs: any[] = []; try { prismaJobs = await prisma.job.findMany({
     orderBy: { createdAt: "desc" },

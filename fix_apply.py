@@ -1,4 +1,7 @@
-"use client";
+# -*- coding: utf-8 -*-
+import os
+
+apply_content = """\"use client\";
 import dynamic from "next/dynamic";
 import { useState } from "react";
 import "react-phone-number-input/style.css";
@@ -235,3 +238,7 @@ export default function Apply({ job }: { job: Job }) {
     </div>
   );
 }
+"""
+
+with open('src/app/apply/[id]/Apply.tsx', 'w', encoding='utf-8') as f:
+    f.write(apply_content)

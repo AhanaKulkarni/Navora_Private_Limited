@@ -1,4 +1,6 @@
-import prisma from "@/lib/prisma";
+import os
+
+page_content = """import prisma from "@/lib/prisma";
 import { notFound } from "next/navigation";
 import { MapPin, DollarSign, ArrowLeft } from "lucide-react";
 import Link from "next/link";
@@ -61,3 +63,7 @@ export default async function JobDetails({ params }: { params: Promise<{ id: str
     </div>
   );
 }
+"""
+
+with open('src/app/jobs/[id]/page.tsx', 'w', encoding='utf-8') as f:
+    f.write(page_content)
