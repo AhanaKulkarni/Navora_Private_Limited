@@ -1,34 +1,63 @@
-import JobDetailsClient from "./JobDetailsClient";
+﻿import prisma from "@/lib/prisma";
 import { notFound } from "next/navigation";
+import { MapPin, DollarSign, ArrowLeft } from "lucide-react";
+import Link from "next/link";
 
-export default function JobDetailsPage({ params }: { params: { id: string } }) {
-  const jobs = [
-    {
-      _id: "cmv2am3ny0000chx01yx03ohj",
-      title: "Fleet Performance Manager",
-      department: "MARINE OPERATIONS",
-      location: "Houston, TX",
-      type: "Permanent",
-      salary: "$130,000 - $150,000",
-      description: "Lead vessel efficiency programmes for an international operator investing in lower-carbon technologies and strategic maritime solutions.",
-      requirements: "Strong background in marine engineering and vessel performance optimization.",
-      createdAt: new Date().toISOString(),
-    },
-    {
-      _id: "cmv2am3o10001chx0hqe52scb",
-      title: "Marine Superintendent",
-      department: "MARINE OPERATIONS",
-      location: "Singapore",
-      type: "Contract",
-      salary: "$140,000 - $160,000",
-      description: "Oversee fleet operations, safety compliance, and crew management for a diverse fleet of specialized vessels.",
-      requirements: "Master Mariner qualification with extensive shore-based management experience.",
-      createdAt: new Date().toISOString(),
-    }
-  ];
+export default async function JobDetails({ params }: { params: Promise<{ id: string }> }) {
+  const { id } = await params;
+  
+  let job: any = null; try { job = await prisma.job.findUnique({
+    where: { id }
+  }); } catch(e) {}
 
-  const job = jobs.find(j => j._id === params.id);
-  if (!job) return notFound();
+  if (!job) {
+    notFound();
+  }
 
-  return <JobDetailsClient job={job as any} />;
+  return (
+    <div className="min-h-screen bg-slate-50 py-16">
+      <div className="max-w-4xl mx-auto px-6">
+        <Link href="/jobs" className="inline-flex items-center gap-2 text-[#071A27] hover:text-[#CE9C5B] font-medium mb-8 transition-colors">
+          <ArrowLeft className="w-4 h-4" />
+          Back to Jobs
+        </Link>
+        
+        <div className="bg-white rounded-2xl shadow-sm border border-gray-100 p-8 md:p-12">
+          <h1 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">{job.title}</h1>
+          <div className="flex flex-wrap gap-6 text-gray-600 mb-8 border-b border-gray-100 pb-8">
+            <div className="flex items-center gap-2">
+              <MapPin className="w-5 h-5 text-[#071A27]" />
+              <span className="text-lg">{job.location}</span>
+            </div>
+            {job.salary && (
+              <div className="flex items-center gap-2">
+                <DollarSign className="w-5 h-5 text-[#071A27]" />
+                <span className="text-lg">{job.salary}</span>
+              </div>
+            )}
+          </div>
+          
+          <div className="mb-10">
+            <h2 className="text-2xl font-bold text-gray-800 mb-4">Job Description</h2>
+            <div className="prose max-w-none text-gray-600 whitespace-pre-wrap">
+              {job.description}
+            </div>
+          </div>
+          
+          <div className="mb-10">
+            <h2 className="text-2xl font-bold text-gray-800 mb-4">Requirements</h2>
+            <div className="prose max-w-none text-gray-600 whitespace-pre-wrap">
+              {job.requirements}
+            </div>
+          </div>
+          
+          <div className="mt-12 pt-8 border-t border-gray-100">
+            <Link href={`/apply/${job.id}`} className="inline-block w-full text-center md:w-auto bg-[#071A27] hover:bg-[#0B2B3E] text-white font-bold py-4 px-12 rounded-full transition-colors text-lg shadow-md hover:shadow-lg">
+              Apply for this Position
+            </Link>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
 }
