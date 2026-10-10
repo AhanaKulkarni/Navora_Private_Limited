@@ -9,18 +9,28 @@ interface PageHeroProps {
 
 export default function PageHero({ title, description }: PageHeroProps) {
   return (
-    <section className="relative flex h-[340px] items-center justify-center overflow-hidden bg-[#0B1F6A] pt-28">
-      {/* Background circles */}
-      <div className="absolute -top-24 -left-24 h-96 w-96 rounded-full bg-white/10" />
-      <div className="absolute right-[-140px] bottom-[-140px] h-[480px] w-[480px] rounded-full bg-white/10" />
+    <section className="relative flex h-[340px] items-center justify-center overflow-hidden bg-abyss pt-28 text-warm-foam">
+      <div className="absolute inset-0 bg-[linear-gradient(to_right,#CE9C5B10_1px,transparent_1px),linear-gradient(to_bottom,#CE9C5B10_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_60%_60%_at_50%_50%,#000_70%,transparent_100%)] opacity-30"></div>
 
-      <div className="relative max-w-3xl px-6 text-center">
+      <div className="relative max-w-3xl px-6 text-center z-10">
+        <motion.div
+          initial={{ opacity: 0, y: 10 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5 }}
+          className="flex items-center justify-center gap-4 mb-6 text-[10px] uppercase tracking-widest font-mono text-warm-foam/70"
+        >
+          <span className="w-4 h-px bg-warm-foam/50"></span>
+          NAVORA
+          <span className="w-4 h-px bg-warm-foam/50"></span>
+        </motion.div>
+
         <motion.h1
           initial={{ opacity: 0, y: 25 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.7 }}
-          className="mb-3 text-4xl font-serif font-bold tracking-tight text-white lg:text-5xl"
+          className="mb-4 text-5xl lg:text-6xl font-heading font-medium tracking-tight"
         >
           {title}
         </motion.h1>
@@ -30,18 +40,10 @@ export default function PageHero({ title, description }: PageHeroProps) {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ delay: 0.3, duration: 0.7 }}
-          className="leading-relaxed text-white/80"
+          className="text-lg font-accent italic text-warm-foam/80"
         >
           {description}
         </motion.p>
-
-        <motion.div
-          initial={{ width: 0 }}
-          whileInView={{ width: 100 }}
-          viewport={{ once: true }}
-          transition={{ delay: 0.5, duration: 0.6 }}
-          className="mx-auto mt-6 h-[3px] bg-[#D6B25E]"
-        />
       </div>
     </section>
   );

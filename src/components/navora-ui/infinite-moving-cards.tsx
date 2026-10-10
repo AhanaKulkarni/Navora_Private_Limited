@@ -29,6 +29,7 @@ export const InfiniteMovingCards = ({
     addAnimation();
   }, []);
   const [start, setStart] = useState(false);
+  
   function addAnimation() {
     if (containerRef.current && scrollerRef.current) {
       const scrollerContent = Array.from(scrollerRef.current.children);
@@ -45,21 +46,17 @@ export const InfiniteMovingCards = ({
       setStart(true);
     }
   }
+  
   const getDirection = () => {
     if (containerRef.current) {
       if (direction === "left") {
-        containerRef.current.style.setProperty(
-          "--animation-direction",
-          "forwards",
-        );
+        containerRef.current.style.setProperty("--animation-direction", "forwards");
       } else {
-        containerRef.current.style.setProperty(
-          "--animation-direction",
-          "reverse",
-        );
+        containerRef.current.style.setProperty("--animation-direction", "reverse");
       }
     }
   };
+  
   const getSpeed = () => {
     if (containerRef.current) {
       if (speed === "fast") {
@@ -71,52 +68,52 @@ export const InfiniteMovingCards = ({
       }
     }
   };
+  
   return (
     <div
       ref={containerRef}
       className={cn(
-        "scroller relative z-20 max-w-7xl overflow-hidden mask-[linear-gradient(to_right,transparent,white_20%,white_80%,transparent)]",
+        "scroller relative z-20 w-full overflow-hidden mask-image-linear-gradient",
         className,
       )}
+      style={{
+        maskImage: 'linear-gradient(to right, transparent, black 10%, black 90%, transparent)',
+        WebkitMaskImage: 'linear-gradient(to right, transparent, black 10%, black 90%, transparent)'
+      }}
     >
       <ul
         ref={scrollerRef}
         className={cn(
-          "flex w-max min-w-full shrink-0 flex-nowrap gap-4 py-4",
+          "flex w-max min-w-full shrink-0 flex-nowrap gap-8 py-4 px-4",
           start && "animate-scroll",
           pauseOnHover && "hover:[animation-play-state:paused]",
         )}
       >
         {items.map((item, idx) => (
           <li
-            className="relative flex h-[350px] w-[85vw] md:w-[350px] max-w-full shrink-0 flex-col rounded-2xl border border-b-0 border-zinc-200 bg-white px-5 py-6 md:px-8 md:w-[450px] dark:border-zinc-700 dark:bg-[linear-gradient(180deg,#27272a,#18181b)]"
-            key={item.name}
+            className="relative flex h-[400px] w-[85vw] md:w-[450px] max-w-full shrink-0 flex-col rounded-sm border border-abyss/10 bg-white p-8 md:p-10 shadow-sm"
+            key={item.name + idx}
           >
             <blockquote className="flex h-full flex-col">
-              <div
-                aria-hidden="true"
-                className="user-select-none pointer-events-none absolute -top-0.5 -left-0.5 -z-1 h-[calc(100%_+_4px)] w-[calc(100%_+_4px)]"
-              ></div>
-              <div className="relative z-20 flex-1 overflow-y-auto pr-4 scrollbar-thin scrollbar-thumb-zinc-300">
-                <span className="text-base leading-relaxed font-serif italic text-slate-700 dark:text-gray-100 whitespace-pre-wrap">
-                  {item.quote}
+              <div className="relative z-20 flex-1 overflow-y-auto pr-4 scrollbar-thin scrollbar-thumb-abyss/10">
+                <span className="text-lg leading-relaxed font-accent italic text-abyss/80 whitespace-pre-wrap">
+                  "{item.quote}"
                 </span>
               </div>
-              <div className="relative z-20 mt-6 flex shrink-0 flex-row items-center border-t border-zinc-100 pt-4">
+              <div className="relative z-20 mt-8 flex shrink-0 flex-row items-center border-t border-abyss/10 pt-6">
                 <div className="flex items-center gap-4">
                   <Image
-                    src={item.image}
+                    src={item.image || "/candidates/candidate.png"}
                     alt={item.name}
-                    width={54}
-                    height={54}
-                    className="rounded-full object-cover ring-1 ring-[#CE9C5B]"
+                    width={48}
+                    height={48}
+                    className="rounded-full object-cover ring-1 ring-brass-signal/50"
                   />
-
                   <span className="flex flex-col">
-                    <span className="text-md leading-[1.6] font-semibold text-blue-900">
+                    <span className="text-sm font-heading font-medium text-abyss">
                       {item.name}
                     </span>
-                    <span className="text-md text-primary leading-[1.6] font-normal">
+                    <span className="text-xs font-mono uppercase tracking-wider text-brass-signal mt-1">
                       {item.title}
                     </span>
                   </span>

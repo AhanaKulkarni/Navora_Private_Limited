@@ -1,7 +1,7 @@
-﻿"use client";
+"use client";
 import React, { useState } from "react";
 
-export default function ContactPage() {
+export default function ContactForm() {
   const [userType, setUserType] = useState("");
   const [loading, setLoading] = useState(false);
   const [success, setSuccess] = useState(false);
@@ -17,7 +17,7 @@ export default function ContactPage() {
     country: "",
   });
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     setFormData((prev) => ({
       ...prev,
       [e.target.name]: e.target.value,
@@ -30,200 +30,161 @@ export default function ContactPage() {
     setSuccess(false);
 
     try {
-      const res = await fetch(
-        `${process.env.NEXT_PUBLIC_API_URL}/api/contact`,
-        {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({
+      const response = await fetch("https://formsubmit.co/ajax/roohi@maritimesolutionsltd.com", {
+        method: "POST",
+        headers: { 
+            'Content-Type': 'application/json',
+            'Accept': 'application/json'
+        },
+        body: JSON.stringify({
             ...formData,
-            type: userType,
-          }),
-        }
-      );
-
-      const data = await res.json();
-
-      if (data.success) {
+            userType,
+            _subject: `New Contact Request from ${formData.firstName} ${formData.lastName}`
+        })
+      });
+      if (response.ok) {
         setSuccess(true);
         setFormData({
-          firstName: "",
-          lastName: "",
-          email: "",
-          phone: "",
-          message: "",
-          company: "",
-          title: "",
-          country: "",
+            firstName: "", lastName: "", email: "", phone: "", message: "", company: "", title: "", country: "",
         });
         setUserType("");
-      } else {
-        alert("Something went wrong âŒ");
       }
-    } catch (err) {
-      console.error(err);
-      alert("Server error âŒ");
+    } catch (error) {
+      console.error("Error submitting form", error);
     } finally {
       setLoading(false);
     }
   };
 
   return (
-    <section className="w-full py-16 md:py-24 bg-white">
-      <div className="max-w-3xl mx-auto px-6">
-        <div className="mb-10">
-          <h1 className="text-3xl md:text-4xl font-semibold mb-3">
-            Connect With Our Team
-          </h1>
-          <p className="text-slate-600">
-            Share a few details and our team will reach out shortly.
-          </p>
+    <div className="py-24 bg-warm-foam text-abyss">
+      <div className="max-w-4xl mx-auto px-6 lg:px-12">
+        <div className="mb-16">
+          <h2 className="text-4xl font-heading font-medium mb-4">Connect With Our Team</h2>
+          <p className="text-abyss/60 font-sans">Share a few details and our team will reach out shortly.</p>
         </div>
 
-        {success && (
-          <div className="mb-6 rounded-lg bg-green-50 border border-green-200 text-green-700 px-4 py-3">
-            Message sent successfully âœ…
-          </div>
-        )}
-
-        <form className="space-y-6" onSubmit={handleSubmit}>
-          {/* Name */}
-          <div className="grid sm:grid-cols-2 gap-4">
-            <div>
-              <label className="text-sm font-medium">First Name</label>
+        <form onSubmit={handleSubmit} className="space-y-8 bg-white p-8 md:p-12 rounded-sm border border-abyss/10 shadow-sm">
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div className="space-y-2">
+              <label className="text-[10px] font-mono tracking-widest uppercase text-abyss/60 block">First Name</label>
               <input
+                type="text"
                 name="firstName"
+                required
                 value={formData.firstName}
                 onChange={handleChange}
-                type="text"
-                required
-                className="mt-1 w-full rounded-lg border border-slate-300 px-4 py-2 focus:outline-none focus:ring-2 focus:ring-slate-900"
+                className="w-full bg-transparent border-b border-abyss/20 py-3 text-abyss focus:outline-none focus:border-brass-signal transition-colors font-sans text-sm"
               />
             </div>
-
-            <div>
-              <label className="text-sm font-medium">Last Name</label>
+            <div className="space-y-2">
+              <label className="text-[10px] font-mono tracking-widest uppercase text-abyss/60 block">Last Name</label>
               <input
+                type="text"
                 name="lastName"
+                required
                 value={formData.lastName}
                 onChange={handleChange}
-                type="text"
-                className="mt-1 w-full rounded-lg border border-slate-300 px-4 py-2 focus:outline-none focus:ring-2 focus:ring-slate-900"
+                className="w-full bg-transparent border-b border-abyss/20 py-3 text-abyss focus:outline-none focus:border-brass-signal transition-colors font-sans text-sm"
               />
             </div>
           </div>
 
-          {/* Email + Phone */}
-          <div className="grid sm:grid-cols-2 gap-4">
-            <div>
-              <label className="text-sm font-medium">Email</label>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div className="space-y-2">
+              <label className="text-[10px] font-mono tracking-widest uppercase text-abyss/60 block">Email Address</label>
               <input
+                type="email"
                 name="email"
+                required
                 value={formData.email}
                 onChange={handleChange}
-                type="email"
-                required
-                className="mt-1 w-full rounded-lg border border-slate-300 px-4 py-2 focus:outline-none focus:ring-2 focus:ring-slate-900"
+                className="w-full bg-transparent border-b border-abyss/20 py-3 text-abyss focus:outline-none focus:border-brass-signal transition-colors font-sans text-sm"
               />
             </div>
-
-            <div>
-              <label className="text-sm font-medium">Phone Number</label>
+            <div className="space-y-2">
+              <label className="text-[10px] font-mono tracking-widest uppercase text-abyss/60 block">Phone Number</label>
               <input
+                type="tel"
                 name="phone"
                 value={formData.phone}
                 onChange={handleChange}
-                type="tel"
-                className="mt-1 w-full rounded-lg border border-slate-300 px-4 py-2 focus:outline-none focus:ring-2 focus:ring-slate-900"
+                className="w-full bg-transparent border-b border-abyss/20 py-3 text-abyss focus:outline-none focus:border-brass-signal transition-colors font-sans text-sm"
               />
             </div>
           </div>
 
-          {/* User Type */}
-          <div>
-            <label className="text-sm font-medium">Who are you?</label>
+          <div className="space-y-2">
+            <label className="text-[10px] font-mono tracking-widest uppercase text-abyss/60 block">Who are you?</label>
             <select
               value={userType}
               onChange={(e) => setUserType(e.target.value)}
               required
-              className="mt-1 w-full rounded-lg border border-slate-300 px-4 py-2 text-slate-700 focus:outline-none focus:ring-2 focus:ring-slate-900"
+              className="w-full bg-transparent border-b border-abyss/20 py-3 text-abyss focus:outline-none focus:border-brass-signal transition-colors font-sans text-sm appearance-none"
             >
-              <option value="" disabled>
-                Select an option
-              </option>
-              <option value="jobSeeker">Job Seeker</option>
-              <option value="employer">Employer</option>
+              <option value="" disabled>Select an option</option>
+              <option value="Candidate">I am a Candidate</option>
+              <option value="Client">I am an Employer/Client</option>
+              <option value="Other">Other</option>
             </select>
           </div>
 
-          {/* Conditional Fields */}
-          {userType === "jobSeeker" && (
-            <div>
-              <label className="text-sm font-medium">
-                Tell us about your enquiry
-              </label>
-              <textarea
-                name="message"
-                value={formData.message}
-                onChange={handleChange}
-                rows={4}
-                required
-                className="mt-1 w-full rounded-lg border border-slate-300 px-4 py-2 focus:outline-none focus:ring-2 focus:ring-slate-900"
-              />
+          {userType === "Client" && (
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 animate-in fade-in zoom-in duration-300">
+              <div className="space-y-2">
+                <label className="text-[10px] font-mono tracking-widest uppercase text-abyss/60 block">Company</label>
+                <input
+                  type="text"
+                  name="company"
+                  value={formData.company}
+                  onChange={handleChange}
+                  className="w-full bg-transparent border-b border-abyss/20 py-3 text-abyss focus:outline-none focus:border-brass-signal transition-colors font-sans text-sm"
+                />
+              </div>
+              <div className="space-y-2">
+                <label className="text-[10px] font-mono tracking-widest uppercase text-abyss/60 block">Job Title</label>
+                <input
+                  type="text"
+                  name="title"
+                  value={formData.title}
+                  onChange={handleChange}
+                  className="w-full bg-transparent border-b border-abyss/20 py-3 text-abyss focus:outline-none focus:border-brass-signal transition-colors font-sans text-sm"
+                />
+              </div>
             </div>
           )}
 
-          {userType === "employer" && (
-            <div className="space-y-4">
-              <input
-                name="company"
-                value={formData.company}
-                onChange={handleChange}
-                placeholder="Company"
-                required
-                className="w-full rounded-lg border border-slate-300 px-4 py-2"
-              />
+          <div className="space-y-2">
+            <label className="text-[10px] font-mono tracking-widest uppercase text-abyss/60 block">Message</label>
+            <textarea
+              name="message"
+              required
+              rows={4}
+              value={formData.message}
+              onChange={handleChange}
+              className="w-full bg-transparent border-b border-abyss/20 py-3 text-abyss focus:outline-none focus:border-brass-signal transition-colors font-sans text-sm resize-none"
+            />
+          </div>
 
-              <input
-                name="title"
-                value={formData.title}
-                onChange={handleChange}
-                placeholder="Title"
-                required
-                className="w-full rounded-lg border border-slate-300 px-4 py-2"
-              />
+          <div className="pt-6">
+            <button
+              type="submit"
+              disabled={loading}
+              className="w-full bg-abyss text-warm-foam hover:bg-abyss/90 py-4 font-sans text-sm font-medium tracking-wide transition-colors flex justify-center items-center gap-3 disabled:opacity-70 disabled:cursor-not-allowed"
+            >
+              {loading ? "Sending..." : "Send Message"}
+              {!loading && <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>}
+            </button>
+          </div>
 
-              <input
-                name="country"
-                value={formData.country}
-                onChange={handleChange}
-                placeholder="Country"
-                required
-                className="w-full rounded-lg border border-slate-300 px-4 py-2"
-              />
-
-              <textarea
-                name="message"
-                value={formData.message}
-                onChange={handleChange}
-                rows={4}
-                placeholder="Tell us about your enquiry"
-                required
-                className="w-full rounded-lg border border-slate-300 px-4 py-2"
-              />
+          {success && (
+            <div className="mt-6 p-4 bg-brass-signal/10 border border-brass-signal/30 text-abyss rounded-sm text-center font-sans text-sm">
+              Thank you for reaching out. We will get back to you shortly.
             </div>
           )}
-
-          {/* Submit */}
-          <button
-            type="submit"
-            disabled={!userType || loading}
-            className="w-full rounded-lg bg-slate-900 text-white py-3 font-medium hover:bg-slate-800 transition disabled:opacity-50"
-          >
-            {loading ? "Sending..." : "Send Message"}
-          </button>
         </form>
       </div>
-    </section>
+    </div>
   );
 }

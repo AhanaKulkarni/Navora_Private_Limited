@@ -1,15 +1,18 @@
 ﻿import CurrentOpening from "@/components/navora-components/CurrentOpenings";
 import HeroSection from "@/components/navora-components/Hero";
-import TestimonialSliderClient from "@/components/navora-components/TestimonialSliderClient";
+import TestimonialsSection from "@/components/navora-components/TestimonialsSection";
 import prisma from "@/lib/prisma";
 
 export const dynamic = "force-dynamic";
 
 export default async function Home() {
-  let prismaJobs: any[] = []; try { prismaJobs = await prisma.job.findMany({
-    orderBy: { createdAt: "desc" },
-    take: 24,
-  }); } catch(e){}
+  let prismaJobs: any[] = []; 
+  try { 
+    prismaJobs = await prisma.job.findMany({
+      orderBy: { createdAt: "desc" },
+      take: 24,
+    }); 
+  } catch(e){}
 
   const jobs = prismaJobs.map((job) => ({
     _id: job.id,
@@ -22,9 +25,12 @@ export default async function Home() {
     createdAt: job.createdAt.toISOString(),
   }));
 
-  let prismaTestimonials: any[] = []; try { prismaTestimonials = await prisma.testimonial.findMany({
-    orderBy: { createdAt: "desc" },
-  }); } catch(e){}
+  let prismaTestimonials: any[] = []; 
+  try { 
+    prismaTestimonials = await prisma.testimonial.findMany({
+      orderBy: { createdAt: "desc" },
+    }); 
+  } catch(e){}
 
   const testimonials = prismaTestimonials.map((t) => ({
     name: t.name,
@@ -37,7 +43,7 @@ export default async function Home() {
     <div>
       <HeroSection />
       <CurrentOpening initialJobs={jobs} />
-      <TestimonialSliderClient initialTestimonials={testimonials} />
+      <TestimonialsSection testimonials={testimonials} />
     </div>
   );
 }
