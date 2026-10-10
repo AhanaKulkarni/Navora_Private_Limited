@@ -30,8 +30,45 @@ export default async function JobsPage() {
       requirements: "Master Mariner qualification with extensive shore-based management experience.",
       createdAt: new Date(),
       updatedAt: new Date(),
-    }
+    },
+    {
+      id: "cmv2am3o10001chx0hqe52scb2",
+      title: "Master Mariner (LNG)",
+      department: "MARINE OPERATIONS",
+      location: "Rotterdam, Netherlands",
+      type: "Permanent",
+      salary: "$140,000 - $160,000",
+      description: "We are seeking a highly experienced Master Mariner for our new fleet of LNG carriers.",
+      requirements: "Master Unlimited license, min 3 years in rank on LNG.",
+      createdAt: new Date(),
+      updatedAt: new Date(),
+    },
+    {
+      id: "cmv2am3o10001chx0hqe52scb3",
+      title: "Chief Engineer - Offshore Wind",
+      department: "ENGINEERING",
+      location: "Aberdeen, Scotland",
+      type: "Permanent",
+      salary: "$90,000 - $110,000",
+      description: "Lead engineering operations on state-of-the-art offshore wind installation vessels.",
+      requirements: "Chief Engineer Unlimited, DP maintenance, HV certificate.",
+      createdAt: new Date(),
+      updatedAt: new Date(),
+    },
+    {
+      id: "cmv2am3o10001chx0hqe52scb4",
+      title: "Fleet Operations Director",
+      department: "MANAGEMENT",
+      location: "Singapore",
+      type: "Permanent",
+      salary: "$180,000+",
+      description: "Direct global fleet operations from our Asia-Pacific headquarters.",
+      requirements: "10+ years shore-based management, sailed as Master.",
+      createdAt: new Date(),
+      updatedAt: new Date(),
+    },
   ];
+
 
   return (
     <div className="min-h-screen bg-warm-foam text-abyss pt-32 pb-24 selection:bg-brass-signal selection:text-abyss">
