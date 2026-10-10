@@ -1,4 +1,4 @@
-import SectorSection from "./SectorSection";
+﻿import SectorSection from "./SectorSection";
 import PageHero from "@/components/navora-components/PageHero";
 
 export const metadata = {
@@ -11,7 +11,7 @@ const sectors = [
   {
     title: "SHIPPING SECTOR",
     description:
-      "Our recruitment services span across technical and marine operations, commercial shipping, ship management, and class and P&I — delivering talent across the global maritime ecosystem.",
+      "Our recruitment services span across technical and marine operations, commercial shipping, ship management, and class and P&I â€” delivering talent across the global maritime ecosystem.",
     image: "/sectors/sector1.jpg",
     points: [
       "Technical and Marine operations",
@@ -93,7 +93,7 @@ export default function ServicesPage() {
     <main>
       <PageHero
         title="SECTORS"
-        description="Delivering specialised recruitment and workforce solutions across maritime, offshore, energy, logistics and digital industries — connecting global talent with opportunity."
+        description="Delivering specialised recruitment and workforce solutions across maritime, offshore, energy, logistics and digital industries â€” connecting global talent with opportunity."
       />
 
       {/* SECTORS */}

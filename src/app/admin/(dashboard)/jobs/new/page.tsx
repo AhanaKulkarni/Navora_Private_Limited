@@ -1,4 +1,4 @@
-import prisma from "@/lib/prisma";
+﻿import prisma from "@/lib/prisma";
 import { redirect } from "next/navigation";
 import { ArrowLeft } from "lucide-react";
 import Link from "next/link";
@@ -39,42 +39,42 @@ export default function NewJob() {
           <div className="grid grid-cols-2 gap-6">
             <div className="flex flex-col gap-2">
               <label className="text-sm font-medium text-gray-700">Job Title</label>
-              <input name="title" required className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#CEA72B]" placeholder="e.g. Master Mariner" />
+              <input name="title" required className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#CE9C5B]" placeholder="e.g. Master Mariner" />
             </div>
             
             <div className="flex flex-col gap-2">
               <label className="text-sm font-medium text-gray-700">Location</label>
-              <input name="location" required className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#CEA72B]" placeholder="e.g. Rotterdam, Netherlands" />
+              <input name="location" required className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#CE9C5B]" placeholder="e.g. Rotterdam, Netherlands" />
             </div>
             
             <div className="flex flex-col gap-2">
               <label className="text-sm font-medium text-gray-700">Department</label>
-              <input name="department" className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#CEA72B]" placeholder="e.g. Engineering" />
+              <input name="department" className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#CE9C5B]" placeholder="e.g. Engineering" />
             </div>
 
             <div className="flex flex-col gap-2">
               <label className="text-sm font-medium text-gray-700">Job Type</label>
-              <input name="type" className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#CEA72B]" placeholder="e.g. Permanent" />
+              <input name="type" className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#CE9C5B]" placeholder="e.g. Permanent" />
             </div>
             
             <div className="flex flex-col gap-2">
               <label className="text-sm font-medium text-gray-700">Salary (Optional)</label>
-              <input name="salary" className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#CEA72B]" placeholder="e.g. Competitive" />
+              <input name="salary" className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#CE9C5B]" placeholder="e.g. Competitive" />
             </div>
           </div>
 
           <div className="flex flex-col gap-2">
             <label className="text-sm font-medium text-gray-700">Description</label>
-            <textarea name="description" required rows={4} className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#CEA72B]" placeholder="Brief job description..."></textarea>
+            <textarea name="description" required rows={4} className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#CE9C5B]" placeholder="Brief job description..."></textarea>
           </div>
 
           <div className="flex flex-col gap-2">
             <label className="text-sm font-medium text-gray-700">Requirements</label>
-            <textarea name="requirements" required rows={4} className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#CEA72B]" placeholder="Key requirements..."></textarea>
+            <textarea name="requirements" required rows={4} className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#CE9C5B]" placeholder="Key requirements..."></textarea>
           </div>
 
           <div className="flex justify-end pt-4 border-t border-gray-100">
-            <button type="submit" className="bg-[#24439C] hover:bg-[#1a3070] text-white px-6 py-2 rounded-lg font-medium transition-colors">
+            <button type="submit" className="bg-[#071A27] hover:bg-[#0B2B3E] text-white px-6 py-2 rounded-lg font-medium transition-colors">
               Save Job
             </button>
           </div>

@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import { motion } from "framer-motion";
 import Image from "next/image";
@@ -61,7 +61,7 @@ export default function RolesGrid({ roles, container, item }: RolesGridProps) {
 
               {/* <button className="inline-flex items-center gap-2 rounded-full border border-white/70 px-5 py-2 text-sm font-medium transition hover:bg-white hover:text-black">
                 View in detail
-                <motion.span whileHover={{ x: 4 }}>→</motion.span>
+                <motion.span whileHover={{ x: 4 }}>â†’</motion.span>
               </button> */}
             </div>
           </motion.div>

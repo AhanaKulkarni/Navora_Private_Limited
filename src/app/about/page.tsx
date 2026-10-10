@@ -1,4 +1,4 @@
-import PageHero from '@/components/navora-components/PageHero'
+﻿import PageHero from '@/components/navora-components/PageHero'
 import AboutSection from './AboutSection'
 import InfoSection from './InfoSection'
 import ValuesSection from './ValuesSection'

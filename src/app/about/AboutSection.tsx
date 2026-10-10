@@ -1,4 +1,4 @@
-import Image from "next/image";
+﻿import Image from "next/image";
 import Link from "next/link";
 
 export default function AboutSection() {
@@ -40,7 +40,7 @@ export default function AboutSection() {
                 talent across Maritime, Shipping, and Energy.
               </p>
               <p>
-                We deliver end-to-end recruitment solutions across Maritime, Shipping, Energy, Logistics, Trading, and Professional Services — from specialist roles to executive leadership.
+                We deliver end-to-end recruitment solutions across Maritime, Shipping, Energy, Logistics, Trading, and Professional Services â€” from specialist roles to executive leadership.
               </p>
 
               {/* <div>

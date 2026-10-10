@@ -1,105 +1,59 @@
-"use client";
+﻿import React from 'react';
+import Link from 'next/link';
+import { ArrowRight } from 'lucide-react';
 
-import Image from "next/image";
-import Link from "next/link";
-import { FC } from "react";
-
-// Define the component props, all are optional
-interface HeroSectionProps {
-  title?: string;
-  subtitle?: string;
-  description?: string;
-  button1Text?: string;
-  button1Href?: string;
-  button2Text?: string;
-  button2Href?: string;
-  backgroundImageUrl?: string; // Optional: Allow overriding the background image
-}
-
-const scrollToCurrentOpenings = () => {
-  const section = document.getElementById("current-openings");
-  section?.scrollIntoView({ behavior: "smooth" });
-};
-
-// 1. Default Background Image URL
-// NOTE: Ensure you have an image file named 'maritime-background.jpg'
-// in your /public directory for this default path to work.
-const DEFAULT_BACKGROUND_IMAGE_URL = "/hero-background.jpg";
-
-// 2. Component renamed to HeroSection
-const HeroSection: FC<HeroSectionProps> = ({
-  // --- Default Content Values ---
-  title = "NAVORA Careers Portal",
-  subtitle = "Search and apply for Maritime jobs, Shipping jobs and Energy jobs.",
-  description = "Our listings are updated regularly to help you find the right opportunity. For the most recent vacancies and how to apply, please visit our LinkedIn page.",
-  button1Text = "Explore Jobs",
-  button1Href = "/jobs",
-  backgroundImageUrl = DEFAULT_BACKGROUND_IMAGE_URL, // Default image path
-  button2Text = "Upload CV",
-  button2Href = "/user/cv",
-  // ------------------------------
-}) => {
+export default function Hero() {
   return (
-    // Hero Section: Full viewport height/width, relative for the image/overlay
-    <section className="relative flex w-full min-h-[85vh] items-center justify-start overflow-hidden pt-28 pb-20 text-white">
-      {/* 1. Background Image (Next.js Image for optimization) */}
-      <Image
-        src={backgroundImageUrl}
-        alt="A large container ship at sea, symbolizing maritime careers"
-        fill
-        className="object-cover z-0"
-        priority={true} // Load the hero image early
-        quality={100}
+    <section className="relative min-h-screen bg-abyss flex items-center justify-center pt-28 pb-12 overflow-hidden text-warm-foam">
+      <div className="max-w-[90rem] w-full mx-auto px-6 md:px-12 grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-8 items-center h-full z-10">
         
-      />
+        {/* Left Content */}
+        <div className="flex flex-col justify-center h-full py-12 md:py-24">
+          <div className="flex items-center gap-4 mb-16 text-xs uppercase tracking-widest font-mono text-warm-foam/70">
+            <span className="w-6 h-px bg-warm-foam/50"></span>
+            NAVORA
+          </div>
+          
+          <div className="font-mono text-[10px] tracking-widest text-brass-signal mb-6 opacity-80">
+            51.5374° N &nbsp;&nbsp;&nbsp; 0.1278° W
+          </div>
+          
+          <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight mb-8 leading-[1.05] font-heading">
+            A clearer course<br />for maritime<br />careers.
+          </h1>
+          
+          <p className="text-xl md:text-2xl font-accent italic text-warm-foam/90 mb-16 max-w-lg leading-relaxed">
+            Expertise, opportunity and direction — brought into view.
+          </p>
 
-      {/* 2. Gradient Overlay for better text visibility */}
-      <div className="absolute inset-0 z-10 bg-gradient-to-b from-white/90 via-white/40 to-black/60"></div>
-
-      <div className="//bg-red-500 relative z-10 mx-auto w-full max-w-7xl pt-16 pb-24 md:pt-36 md:pb-48">
-        <div className="//bg-green-500 mx-4 flex justify-between">
-          {/* Left Content */}
-          <div className="//bg-blue-600 max-w-3xl">
-            <h1 className="mb-4 text-4xl font-serif font-bold tracking-tight text-black sm:text-5xl lg:text-7xl">
-              {title}
-            </h1>
-            <h2 className="text-secondary mb-6 text-xl font-normal tracking-tight sm:text-2xl md:text-3xl">
-              {subtitle}
-            </h2>
-            <p className="mb-10 text-base font-medium text-white/90 sm:text-lg md:text-xl max-w-2xl">
-              {description}
-            </p>
-            <div className="flex gap-4">
-              <button
-                onClick={scrollToCurrentOpenings}
-                className="group text-secondary hover:bg-secondary flex items-center gap-2 rounded-full bg-white px-4 py-2 font-medium shadow-lg transition duration-300 ease-in-out hover:text-white md:px-6 md:py-2 md:text-lg"
-              >
-                {button1Text}
-
-                <svg
-                  className="h-5 w-5 transition-transform duration-300 group-hover:translate-x-1"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth={2}
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="M9 5l7 7-7 7"
-                  />
-                </svg>
-              </button>
-
-              {/* <button className="border-secondary text-secondary hover:bg-secondary rounded-full border bg-white px-4 py-2 font-medium shadow-lg transition duration-150 ease-in-out hover:text-white md:px-6 md:py-2 md:text-lg">
-                {button2Text}
-              </button> */}
-            </div>
+          <div className="mt-auto pt-16 flex gap-4 text-xs font-sans text-warm-foam/50 max-w-sm leading-relaxed">
+            <span className="w-8 h-px bg-warm-foam/20 mt-2 shrink-0"></span>
+            <p>A modern maritime editorial system built on deep-ocean authority, navigational precision and optimistic horizon light</p>
           </div>
         </div>
+
+        {/* Right Image */}
+        <div className="relative h-[60vh] lg:h-[80vh] w-full overflow-hidden rounded-sm group">
+          <img 
+            src="/hero-bg.jpg" 
+            alt="Maritime cargo ship on the ocean" 
+            className="absolute inset-0 w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105"
+          />
+          <div className="absolute inset-0 bg-abyss/10 mix-blend-overlay"></div>
+          
+          {/* Floating Card */}
+          <div className="absolute bottom-8 right-8 bg-abyss/90 backdrop-blur-md border border-warm-foam/10 p-6 rounded-sm max-w-xs shadow-2xl">
+            <div className="flex justify-between items-center mb-4 text-[10px] font-mono text-brass-signal uppercase tracking-wider">
+              <span>NAV / 001</span>
+              <ArrowRight className="w-3 h-3" />
+            </div>
+            <p className="font-heading text-sm text-warm-foam leading-relaxed">
+              Career routes, charted with confidence.
+            </p>
+          </div>
+        </div>
+
       </div>
     </section>
   );
-};
-
-export default HeroSection;
+}

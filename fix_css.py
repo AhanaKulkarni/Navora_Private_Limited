@@ -1,10 +1,27 @@
-import re
+import os
 
-with open('src/app/globals.css', 'r', encoding='utf-8') as f:
-    content = f.read()
+css_content = """@import "tailwindcss";
 
-if '--font-serif' not in content:
-    content = content.replace('--font-display: \'Inter\', sans-serif;', '--font-display: \'Inter\', sans-serif;\n    --font-serif: var(--font-serif);\n    --font-sans: var(--font-sans);')
+@theme {
+    --color-abyss: #071A27;
+    --color-deep-ocean: #0B2B3E;
+    --color-tidal-blue: #1E5D6D;
+    --color-horizon-light: #78C7D3;
+    --color-brass-signal: #CE9C5B;
+    --color-warm-foam: #F5F3E9;
+    
+    --font-heading: var(--font-dm-sans);
+    --font-sans: var(--font-dm-sans);
+    --font-accent: var(--font-cormorant);
+    --font-mono: var(--font-ibm-plex);
+}
+
+@layer base {
+    * {
+        box-sizing: border-box;
+    }
+}
+"""
 
 with open('src/app/globals.css', 'w', encoding='utf-8') as f:
-    f.write(content)
+    f.write(css_content)

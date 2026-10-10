@@ -1,10 +1,10 @@
-import React from "react";
+﻿import React from "react";
 
 export default function Footer() {
   return (
     <footer className="">
       <div className="h-2 bg-[#D5A63B]"></div>
-      <div className="bg-[#1F3C8B] pt-12 pb-6 text-white">
+      <div className="bg-[#0B2B3E] pt-12 pb-6 text-white">
         <div className="mx-auto grid max-w-7xl grid-cols-1 gap-10 px-6 md:grid-cols-4">
           {/* Logo + Address */}
           <div>
@@ -86,7 +86,7 @@ export default function Footer() {
 
         {/* Bottom Line */}
         <div className="mt-10 border-t border-white/20 pt-4 text-center text-sm">
-          Copyright © 2025 MaritimeSolutionsLtd. All rights reserved.
+          Copyright Â© 2025 MaritimeSolutionsLtd. All rights reserved.
         </div>
       </div>
     </footer>

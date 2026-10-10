@@ -1,4 +1,4 @@
-import CurrentOpening from "@/components/navora-components/CurrentOpenings";
+﻿import CurrentOpening from "@/components/navora-components/CurrentOpenings";
 import HeroSection from "@/components/navora-components/Hero";
 import TestimonialSliderClient from "@/components/navora-components/TestimonialSliderClient";
 import prisma from "@/lib/prisma";

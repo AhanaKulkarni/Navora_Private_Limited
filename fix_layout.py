@@ -1,4 +1,6 @@
-import type { Metadata, Viewport } from "next";
+import os
+
+layout_content = """import type { Metadata, Viewport } from "next";
 import { DM_Sans, Cormorant_Garamond, IBM_Plex_Mono } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/navora-components/Navbar";
@@ -69,3 +71,7 @@ export default function RootLayout({
     </html>
   );
 }
+"""
+
+with open('src/app/layout.tsx', 'w', encoding='utf-8') as f:
+    f.write(layout_content)

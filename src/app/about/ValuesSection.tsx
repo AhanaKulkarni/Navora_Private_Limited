@@ -1,4 +1,4 @@
-import Image from "next/image";
+﻿import Image from "next/image";
 
 const values = [
   {
@@ -15,7 +15,7 @@ const values = [
     letter: "V",
     description: [
       "Follow-through after joining",
-      "Ownership of outcomes—not excuses.",
+      "Ownership of outcomesâ€”not excuses.",
     ],
   },
   {
@@ -30,7 +30,7 @@ const values = [
     letter: "U",
     description: [
       "Evaluate people, not profiles",
-      "Decisions based on capability and intent—not brand names or pedigree.",
+      "Decisions based on capability and intentâ€”not brand names or pedigree.",
     ],
   },
   {
@@ -59,7 +59,7 @@ export default function ValuesSection() {
         <div className="mx-auto max-w-6xl">
           <div className="grid items-start gap-10 md:grid-cols-2 md:gap-16 mb-10">
 
-            {/* LEFT — TEXT */}
+            {/* LEFT â€” TEXT */}
             <div>
               <h3 className="mb-4 text-2xl font-semibold md:text-4xl">
                 Our Values
@@ -83,7 +83,7 @@ export default function ValuesSection() {
               </p>
             </div>
 
-            {/* RIGHT — IMAGE (Desktop) */}
+            {/* RIGHT â€” IMAGE (Desktop) */}
             <div className="hidden flex-col items-center md:flex">
               <div className="w-full max-w-xs md:max-w-sm">
                 <Image

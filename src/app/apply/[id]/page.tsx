@@ -1,4 +1,4 @@
-import Apply from "./Apply";
+﻿import Apply from "./Apply";
 import prisma from "@/lib/prisma";
 import { notFound } from "next/navigation";
 

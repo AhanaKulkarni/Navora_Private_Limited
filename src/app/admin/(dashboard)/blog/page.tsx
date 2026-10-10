@@ -1,4 +1,4 @@
-import prisma from "@/lib/prisma";
+﻿import prisma from "@/lib/prisma";
 import { Plus, Trash2, Edit } from "lucide-react";
 import Link from "next/link";
 import { revalidatePath } from "next/cache";
@@ -20,7 +20,7 @@ export default async function AdminBlog() {
     <div>
       <div className="flex justify-between items-center mb-8">
         <h1 className="text-3xl font-bold text-gray-800">Manage Blog & News</h1>
-        <button className="bg-[#24439C] hover:bg-[#1a3070] text-white px-4 py-2 rounded-lg flex items-center gap-2 transition-colors opacity-50 cursor-not-allowed">
+        <button className="bg-[#071A27] hover:bg-[#0B2B3E] text-white px-4 py-2 rounded-lg flex items-center gap-2 transition-colors opacity-50 cursor-not-allowed">
           <Plus className="w-5 h-5" />
           Add Post (WIP)
         </button>

@@ -1,4 +1,4 @@
-import prisma from "@/lib/prisma";
+﻿import prisma from "@/lib/prisma";
 import { redirect } from "next/navigation";
 import { ArrowLeft } from "lucide-react";
 import Link from "next/link";
@@ -38,7 +38,7 @@ export default function NewTestimonial() {
               <input 
                 name="name"
                 required
-                className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#CEA72B]"
+                className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#CE9C5B]"
                 placeholder="e.g. Arun D'Sa"
               />
             </div>
@@ -48,7 +48,7 @@ export default function NewTestimonial() {
               <input 
                 name="position"
                 required
-                className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#CEA72B]"
+                className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#CE9C5B]"
                 placeholder="e.g. Technical Superintendent"
               />
             </div>
@@ -60,7 +60,7 @@ export default function NewTestimonial() {
               name="content"
               required
               rows={6}
-              className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#CEA72B]"
+              className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#CE9C5B]"
               placeholder="Their testimonial..."
             ></textarea>
           </div>
@@ -68,7 +68,7 @@ export default function NewTestimonial() {
           <div className="flex justify-end pt-4 border-t border-gray-100">
             <button 
               type="submit"
-              className="bg-[#24439C] hover:bg-[#1a3070] text-white px-6 py-2 rounded-lg font-medium transition-colors"
+              className="bg-[#071A27] hover:bg-[#0B2B3E] text-white px-6 py-2 rounded-lg font-medium transition-colors"
             >
               Save Testimonial
             </button>

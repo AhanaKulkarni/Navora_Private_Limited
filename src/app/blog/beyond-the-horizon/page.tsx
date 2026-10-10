@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 import React, { useState, useEffect } from 'react';
 import { 
   Compass, 
@@ -80,7 +80,7 @@ const App = () => {
 
           <h1 className="text-4xl md:text-4xl lg:text-5xl font-extrabold text-[#1A365D] leading-[1.1] mb-10 tracking-tight">
             There are so many fields... but how do I even know what fields exist?
-            {/* “𝐓𝐡𝐞𝐫𝐞 𝐚𝐫𝐞 𝐬𝐨 𝐦𝐚𝐧𝐲 𝐟𝐢𝐞𝐥𝐝𝐬… 𝐛𝐮𝐭 𝐡𝐨𝐰 𝐝𝐨 𝐈 𝐞𝐯𝐞𝐧 𝐤𝐧𝐨𝐰 𝐰𝐡𝐚𝐭 fields 𝐞𝐱𝐢𝐬𝐭?” */}
+            {/* â€œð“ð¡ðžð«ðžÂ ðšð«ðžÂ ð¬ð¨Â ð¦ðšð§ð²Â ðŸð¢ðžð¥ðð¬â€¦Â ð›ð®ð­Â ð¡ð¨ð°Â ðð¨Â ðˆÂ ðžð¯ðžð§Â ð¤ð§ð¨ð°Â ð°ð¡ðšð­Â fieldsÂ ðžð±ð¢ð¬ð­?â€ */}
           </h1>
 
           <div className="flex flex-col md:flex-row md:items-center justify-between gap-6 border-y border-slate-100 py-8">
@@ -123,9 +123,9 @@ const App = () => {
         <article className="prose prose-slate prose-lg max-w-none text-slate-700 leading-relaxed">
           
           {/* <div className="bg-[#1A365D] text-white p-8 rounded-2xl mb-12 shadow-xl shadow-blue-900/10 relative overflow-hidden">
-            <h4 className="text-[#B8962D] font-black text-xs uppercase tracking-widest mb-4">𝐒𝐞𝐪𝐮𝐞𝐥</h4>
+            <h4 className="text-[#B8962D] font-black text-xs uppercase tracking-widest mb-4">ð’ðžðªð®ðžð¥</h4>
             <p className="text-2xl font-serif italic m-0 relative z-10 leading-snug">
-              “𝐓𝐡𝐞𝐫𝐞 𝐚𝐫𝐞 𝐬𝐨 𝐦𝐚𝐧𝐲 𝐟𝐢𝐞𝐥𝐝𝐬… 𝐛𝐮𝐭 𝐡𝐨𝐰 𝐝𝐨 𝐈 𝐞𝐯𝐞𝐧 𝐤𝐧𝐨𝐰 𝐰𝐡𝐚𝐭 fields 𝐞𝐱𝐢𝐬𝐭?”
+              â€œð“ð¡ðžð«ðžÂ ðšð«ðžÂ ð¬ð¨Â ð¦ðšð§ð²Â ðŸð¢ðžð¥ðð¬â€¦Â ð›ð®ð­Â ð¡ð¨ð°Â ðð¨Â ðˆÂ ðžð¯ðžð§Â ð¤ð§ð¨ð°Â ð°ð¡ðšð­Â fieldsÂ ðžð±ð¢ð¬ð­?â€
             </p>
             <div className="absolute top-0 right-0 p-4 opacity-10">
               <Compass size={120} />
@@ -137,26 +137,26 @@ const App = () => {
           </p>
 
           <blockquote className="border-l-4 border-[#B8962D] pl-6 py-2 italic text-slate-500 text-xl bg-slate-50 rounded-r-xl mb-10">
-            “𝑩𝒖𝒕 𝒉𝒐𝒘 𝒕𝒐 𝒇𝒊𝒏𝒅 𝒗𝒂𝒓𝒊𝒐𝒖𝒔 𝒊𝒏𝒕𝒆𝒓𝒏𝒔𝒉𝒊𝒑𝒔? 𝑩𝒖𝒕 𝒃𝒆𝒇𝒐𝒓𝒆 𝒕𝒉𝒂𝒕 𝒐𝒏𝒆 𝒉𝒂𝒔 𝒕𝒐 𝒆𝒗𝒆𝒏 𝒌𝒏𝒐𝒘 𝒘𝒉𝒂𝒕 𝒂𝒓𝒆 𝒕𝒉𝒆 𝒇𝒊𝒆𝒍𝒅𝒔 𝒕𝒉𝒂𝒕 𝒆𝒗𝒆𝒏 𝒆𝒙𝒊𝒔𝒕, 𝒉𝒐𝒘 𝒕𝒐 𝒌𝒏𝒐𝒘 𝒕𝒉𝒂𝒕 ?”
+            â€œð‘©ð’–ð’• ð’‰ð’ð’˜ ð’•ð’ ð’‡ð’Šð’ð’… ð’—ð’‚ð’“ð’Šð’ð’–ð’” ð’Šð’ð’•ð’†ð’“ð’ð’”ð’‰ð’Šð’‘ð’”? ð‘©ð’–ð’• ð’ƒð’†ð’‡ð’ð’“ð’† ð’•ð’‰ð’‚ð’• ð’ð’ð’† ð’‰ð’‚ð’” ð’•ð’ ð’†ð’—ð’†ð’ ð’Œð’ð’ð’˜ ð’˜ð’‰ð’‚ð’• ð’‚ð’“ð’† ð’•ð’‰ð’† ð’‡ð’Šð’†ð’ð’…ð’” ð’•ð’‰ð’‚ð’• ð’†ð’—ð’†ð’ ð’†ð’™ð’Šð’”ð’•, ð’‰ð’ð’˜ ð’•ð’ ð’Œð’ð’ð’˜ ð’•ð’‰ð’‚ð’• ?â€
           </blockquote>
 
           <p className="mb-12">
-            That’s the real starting point. Because before choosing what suits you, you need to first understand <strong>what’s out there.</strong>
+            Thatâ€™s the real starting point. Because before choosing what suits you, you need to first understand <strong>whatâ€™s out there.</strong>
           </p>
 
           <section className="mb-16">
             <h2 className="text-3xl font-bold text-[#1A365D] mb-8 flex items-center gap-4">
-              <span className="text-[#B8962D]">𝐒𝐭𝐞𝐩 𝟏:</span> 𝐌𝐚𝐩 𝐭𝐡𝐞 𝐥𝐚𝐧𝐝𝐬𝐜𝐚𝐩𝐞
+              <span className="text-[#B8962D]">ð’ð­ðžð© ðŸ:</span> ðŒðšð© ð­ð¡ðž ð¥ðšð§ðð¬ðœðšð©ðž
             </h2>
             <p className="mb-6">
-              When you opt for a particular field let’s say you are from Engineering background you have already figured out your domain something you really liked.
+              When you opt for a particular field letâ€™s say you are from Engineering background you have already figured out your domain something you really liked.
             </p>
             <p className="mb-8">
-              Now which field in that particular domain resonates with you… is the area you have to figure out by first <strong>strategizing</strong> or looking how many areas are there. Every domain is much wider than it looks from the outside.
+              Now which field in that particular domain resonates with youâ€¦ is the area you have to figure out by first <strong>strategizing</strong> or looking how many areas are there. Every domain is much wider than it looks from the outside.
             </p>
 
             <div className="bg-slate-50 p-6 rounded-2xl mb-8 border border-slate-100 italic text-slate-600">
-              Take Marine Engineering, for example — it’s not just "working on ships." It can branch into:
+              Take Marine Engineering, for example â€” itâ€™s not just "working on ships." It can branch into:
             </div>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
@@ -173,29 +173,29 @@ const App = () => {
               ))}
             </div>
             
-            <p className="mt-8 text-slate-500 italic">Most students only see 1–2 of these. That’s where the gap begins.</p>
+            <p className="mt-8 text-slate-500 italic">Most students only see 1â€“2 of these. Thatâ€™s where the gap begins.</p>
           </section>
 
           <section className="mb-16">
             <h2 className="text-3xl font-bold text-[#1A365D] mb-8 flex items-center gap-4">
-              <span className="text-[#B8962D]">𝐒𝐭𝐞𝐩 𝟐:</span> 𝐅𝐢𝐥𝐭𝐞𝐫 — 𝐁𝐮𝐭 𝐒𝐦𝐚𝐫𝐭𝐥𝐲
+              <span className="text-[#B8962D]">ð’ð­ðžð© ðŸ:</span> ð…ð¢ð¥ð­ðžð« â€” ðð®ð­ ð’ð¦ðšð«ð­ð¥ð²
             </h2>
-            <p className="mb-6 italic">Don’t just ask: “What do I like?”</p>
-            <p className="mb-8 italic">Also ask: “What is relevant in the market?” and “Where are opportunities growing?”</p>
+            <p className="mb-6 italic">Donâ€™t just ask: â€œWhat do I like?â€</p>
+            <p className="mb-8 italic">Also ask: â€œWhat is relevant in the market?â€ and â€œWhere are opportunities growing?â€</p>
 
             <div className="p-10 bg-slate-900 rounded-2xl text-white border-b-8 border-[#B8962D] text-center">
               <h3 className="text-[#B8962D] font-black text-xs uppercase tracking-[0.3em] mb-8">The Sweet Spot</h3>
               <div className="flex flex-col md:flex-row items-center gap-6 justify-center">
                 <div className="px-6 py-3 border border-white/10 rounded-full font-bold">
-                  𝐈𝐧𝐭𝐞𝐫𝐞𝐬𝐭
+                  ðˆð§ð­ðžð«ðžð¬ð­
                 </div>
-                <div className="text-[#B8962D] font-bold text-2xl">∩</div>
+                <div className="text-[#B8962D] font-bold text-2xl">âˆ©</div>
                 <div className="px-6 py-3 border border-white/10 rounded-full font-bold">
-                  𝐌𝐚𝐫𝐤𝐞𝐭 𝐃𝐞𝐦𝐚𝐧𝐝
+                  ðŒðšð«ð¤ðžð­ ðƒðžð¦ðšð§ð
                 </div>
-                <div className="text-[#B8962D] font-bold text-2xl">∩</div>
+                <div className="text-[#B8962D] font-bold text-2xl">âˆ©</div>
                 <div className="px-6 py-3 border border-white/10 rounded-full font-bold">
-                  𝐘𝐨𝐮𝐫 𝐒𝐭𝐫𝐞𝐧𝐠𝐭𝐡𝐬
+                  ð˜ð¨ð®ð« ð’ð­ð«ðžð§ð ð­ð¡ð¬
                 </div>
               </div>
             </div>
@@ -203,7 +203,7 @@ const App = () => {
 
           <section className="mb-16">
             <h2 className="text-3xl font-bold text-[#1A365D] mb-8 flex items-center gap-4">
-              <span className="text-[#B8962D]">𝐒𝐭𝐞𝐩 𝟑:</span> 𝐆𝐞𝐭 𝐂𝐥𝐨𝐬𝐞 𝐭𝐨 𝐭𝐡𝐞 𝐑𝐞𝐚𝐥 𝐖𝐨𝐫𝐥𝐝
+              <span className="text-[#B8962D]">ð’ð­ðžð© ðŸ‘:</span> ð†ðžð­ ð‚ð¥ð¨ð¬ðž ð­ð¨ ð­ð¡ðž ð‘ðžðšð¥ ð–ð¨ð«ð¥ð
             </h2>
             <p className="mb-8">Before even landing an internship:</p>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -220,15 +220,15 @@ const App = () => {
               ))}
             </div>
             <p className="mt-8 text-center text-xl text-[#1A365D] font-serif italic">
-              "Because clarity doesn’t come from thinking. It comes from exposure."
+              "Because clarity doesnâ€™t come from thinking. It comes from exposure."
             </p>
           </section>
 
           <section className="mb-16">
             <h2 className="text-3xl font-bold text-[#1A365D] mb-8 flex items-center gap-4">
-              <span className="text-[#B8962D]">𝐒𝐭𝐞𝐩 𝟒:</span> 𝐔𝐬𝐞 𝐈𝐧𝐭𝐞𝐫𝐧𝐬𝐡𝐢𝐩𝐬 𝐒𝐭𝐫𝐚𝐭𝐞𝐠𝐢𝐜𝐚𝐥𝐥𝐲
+              <span className="text-[#B8962D]">ð’ð­ðžð© ðŸ’:</span> ð”ð¬ðž ðˆð§ð­ðžð«ð§ð¬ð¡ð¢ð©ð¬ ð’ð­ð«ðšð­ðžð ð¢ðœðšð¥ð¥ð²
             </h2>
-            <p className="mb-8">Yes, some marine colleges offer structured 6-month internships — that’s a great starting point. But don’t stop there.</p>
+            <p className="mb-8">Yes, some marine colleges offer structured 6-month internships â€” thatâ€™s a great starting point. But donâ€™t stop there.</p>
             
             <div className="space-y-4">
               <h4 className="font-bold text-[#1A365D] mb-4 uppercase tracking-widest text-xs">Use each experience to answer:</h4>
@@ -248,11 +248,11 @@ const App = () => {
 
           <section className="mb-16">
             <h2 className="text-3xl font-bold text-[#1A365D] mb-8 flex items-center gap-4">
-              <span className="text-[#B8962D]">𝐒𝐭𝐞𝐩 𝟓:</span> 𝐍𝐞𝐭𝐰𝐨𝐫𝐤 𝐰𝐢𝐭𝐡 𝐈𝐧𝐭𝐞𝐧𝐭
+              <span className="text-[#B8962D]">ð’ð­ðžð© ðŸ“:</span> ððžð­ð°ð¨ð«ð¤ ð°ð¢ð­ð¡ ðˆð§ð­ðžð§ð­
             </h2>
             <p className="mb-8">This is where most people hesitate. But this is also where the biggest advantage lies.</p>
             <ul className="list-none p-0 space-y-4 mb-8">
-              <li className="flex items-center gap-3"><Network size={18} className="text-[#B8962D]" /> Reach out to people in roles you’re curious about</li>
+              <li className="flex items-center gap-3"><Network size={18} className="text-[#B8962D]" /> Reach out to people in roles youâ€™re curious about</li>
               <li className="flex items-center gap-3"><Network size={18} className="text-[#B8962D]" /> Ask simple, genuine questions</li>
               <li className="flex items-center gap-3"><Network size={18} className="text-[#B8962D]" /> Stay consistent</li>
             </ul>
@@ -266,8 +266,8 @@ const App = () => {
           </section>
 
           <section className="mb-16 pt-12 border-t border-slate-100">
-            <h2 className="text-3xl font-bold text-[#1A365D] mb-8">𝐓𝐡𝐞 𝐑𝐞𝐚𝐥 𝐒𝐡𝐢𝐟𝐭</h2>
-            <p className="mb-6">The problem isn’t that students don’t explore. The problem is:</p>
+            <h2 className="text-3xl font-bold text-[#1A365D] mb-8">ð“ð¡ðž ð‘ðžðšð¥ ð’ð¡ð¢ðŸð­</h2>
+            <p className="mb-6">The problem isnâ€™t that students donâ€™t explore. The problem is:</p>
             <ul className="list-none p-0 space-y-3">
               <li className="flex items-center gap-3 font-bold text-slate-700"><CheckCircle2 className="text-red-400" size={20} /> They explore without awareness</li>
               <li className="flex items-center gap-3 font-bold text-slate-700"><CheckCircle2 className="text-red-400" size={20} /> They choose without context</li>
@@ -275,10 +275,10 @@ const App = () => {
           </section>
 
           <section className="mt-20 pt-12 border-t border-slate-100 text-center pb-24">
-            <p className="text-slate-400 text-sm font-bold uppercase tracking-widest mb-6">𝐅𝐢𝐧𝐚𝐥 𝐓𝐡𝐨𝐮𝐠𝐡𝐭</p>
+            <p className="text-slate-400 text-sm font-bold uppercase tracking-widest mb-6">ð…ð¢ð§ðšð¥ ð“ð¡ð¨ð®ð ð¡ð­</p>
             
             <div className="max-w-2xl mx-auto mb-12">
-              <p className="text-slate-600 mb-8">You don’t “find” the right field overnight. You build clarity step by step:</p>
+              <p className="text-slate-600 mb-8">You donâ€™t â€œfindâ€ the right field overnight. You build clarity step by step:</p>
               <div className="flex flex-wrap justify-center items-center gap-4 text-[#1A365D] font-black text-sm uppercase">
                 <span>Awareness</span> <ArrowRight size={14} className="text-[#B8962D]" />
                 <span>Exposure</span> <ArrowRight size={14} className="text-[#B8962D]" />
@@ -298,7 +298,7 @@ const App = () => {
               <div className="bg-[#1A365D] text-white p-8 rounded-2xl mb-10 text-left">
                 <p className="text-[#B8962D] font-bold text-xs uppercase tracking-widest mb-4">Community Engagement</p>
                 <p className="text-lg font-medium leading-relaxed">
-                  I’d love to hear from students and professionals: How did you discover your field? Was it planned — or accidental?
+                  Iâ€™d love to hear from students and professionals: How did you discover your field? Was it planned â€” or accidental?
                 </p>
               </div>
 

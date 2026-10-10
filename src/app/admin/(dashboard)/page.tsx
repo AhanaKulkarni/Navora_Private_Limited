@@ -1,4 +1,4 @@
-import prisma from "@/lib/prisma";
+﻿import prisma from "@/lib/prisma";
 import { Briefcase, FileText, Users, Mail } from "lucide-react";
 
 export default async function AdminDashboard() {

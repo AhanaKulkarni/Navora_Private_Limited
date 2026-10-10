@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 import React, { useState } from "react";
 
 export default function ContactPage() {
@@ -58,11 +58,11 @@ export default function ContactPage() {
         });
         setUserType("");
       } else {
-        alert("Something went wrong ❌");
+        alert("Something went wrong âŒ");
       }
     } catch (err) {
       console.error(err);
-      alert("Server error ❌");
+      alert("Server error âŒ");
     } finally {
       setLoading(false);
     }
@@ -82,7 +82,7 @@ export default function ContactPage() {
 
         {success && (
           <div className="mb-6 rounded-lg bg-green-50 border border-green-200 text-green-700 px-4 py-3">
-            Message sent successfully ✅
+            Message sent successfully âœ…
           </div>
         )}
 

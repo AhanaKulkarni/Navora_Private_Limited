@@ -1,4 +1,4 @@
-import Image from "next/image";
+﻿import Image from "next/image";
 
 interface InfoSectionProps {
   title: string;
@@ -18,7 +18,7 @@ export default function InfoSection({
       <div className="mx-auto max-w-6xl">
         <div className="grid items-start gap-10 md:grid-cols-2 md:gap-16">
           
-          {/* LEFT — TEXT */}
+          {/* LEFT â€” TEXT */}
           <div>
             <h3 className="mb-4 text-2xl font-semibold md:text-4xl">
               {title}
@@ -42,7 +42,7 @@ export default function InfoSection({
             </p>
           </div>
 
-          {/* RIGHT — IMAGE (Desktop) */}
+          {/* RIGHT â€” IMAGE (Desktop) */}
           <div className="hidden flex-col items-center md:flex">
             <div className="w-full max-w-xs md:max-w-sm">
               <Image

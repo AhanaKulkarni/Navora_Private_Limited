@@ -1,4 +1,4 @@
-// app/blog/marine-career-guide/page.tsx
+﻿// app/blog/marine-career-guide/page.tsx
 
 import Article from "./Article";
 
@@ -8,14 +8,14 @@ export const metadata = {
   description:
     "A practical guide for students and professionals to explore career paths, internships, and industry opportunities.",
   openGraph: {
-    title: "Your Career Isn’t Confusing. It’s Unexplored.",
+    title: "Your Career Isnâ€™t Confusing. Itâ€™s Unexplored.",
     description:
       "A practical guide to understanding career paths for students and professionals.",
     url: "https://navora.maritimesolutionsltd.com/blog/your-career-isnt-confusing-its-unexplored",
     siteName: "MaritimeSolutionsLtd",
     images: [
       {
-        url: "https://navora.maritimesolutionsltd.com/banner/your-career-isnt-confusing-its-unexplored.png", // 👈 REQUIRED
+        url: "https://navora.maritimesolutionsltd.com/banner/your-career-isnt-confusing-its-unexplored.png", // ðŸ‘ˆ REQUIRED
         width: 1200,
         height: 627,
       },

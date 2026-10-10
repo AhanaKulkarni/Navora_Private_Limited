@@ -1,4 +1,4 @@
-import PageHero from "@/components/navora-components/PageHero";
+﻿import PageHero from "@/components/navora-components/PageHero";
 import RolesGrid from "./RolesGrid";
 import ServicesOfferings from "./ServicesOfferings";
 
@@ -13,7 +13,7 @@ const services = [
   },
   {
     title: "Recruitment Process Outsourcing (RPO)",
-    desc: "Navora’s Recruitment Process Outsourcing (RPO) service enables Maritime and Shipping businesses to optimize their hiring. From high-volume recruitment to specialized roles, our expert team can manage part or all your recruitment process, making your hiring strategy more efficient and effective.",
+    desc: "Navoraâ€™s Recruitment Process Outsourcing (RPO) service enables Maritime and Shipping businesses to optimize their hiring. From high-volume recruitment to specialized roles, our expert team can manage part or all your recruitment process, making your hiring strategy more efficient and effective.",
   },
   {
     title: "Salary Surveys and Benchmarking",
@@ -82,7 +82,7 @@ export default function ServicesGrid() {
       {/* HERO */}
       <PageHero
         title="Our Services"
-        description="We deliver end-to-end recruitment solutions across Maritime, Shipping, Energy, Logistics, Trading, and Professional Services — from specialist roles to executive leadership."
+        description="We deliver end-to-end recruitment solutions across Maritime, Shipping, Energy, Logistics, Trading, and Professional Services â€” from specialist roles to executive leadership."
       />
 
       {/* ROLES GRID */}

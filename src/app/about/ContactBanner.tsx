@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import Image from "next/image";
 import { useRouter } from "next/navigation";
@@ -27,7 +27,7 @@ export default function ContactBanner() {
         </h2>
 
         <p className="mb-6 text-white/90">
-          Whether you’re exploring your next career move or seeking the right talent for your team, our team is ready to support you.
+          Whether youâ€™re exploring your next career move or seeking the right talent for your team, our team is ready to support you.
         </p>
 
         <button

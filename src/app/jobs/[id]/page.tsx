@@ -1,4 +1,4 @@
-import prisma from "@/lib/prisma";
+﻿import prisma from "@/lib/prisma";
 import { notFound } from "next/navigation";
 import { MapPin, DollarSign, ArrowLeft } from "lucide-react";
 import Link from "next/link";
@@ -17,7 +17,7 @@ export default async function JobDetails({ params }: { params: Promise<{ id: str
   return (
     <div className="min-h-screen bg-slate-50 py-16">
       <div className="max-w-4xl mx-auto px-6">
-        <Link href="/jobs" className="inline-flex items-center gap-2 text-[#24439C] hover:text-[#CEA72B] font-medium mb-8 transition-colors">
+        <Link href="/jobs" className="inline-flex items-center gap-2 text-[#071A27] hover:text-[#CE9C5B] font-medium mb-8 transition-colors">
           <ArrowLeft className="w-4 h-4" />
           Back to Jobs
         </Link>
@@ -26,12 +26,12 @@ export default async function JobDetails({ params }: { params: Promise<{ id: str
           <h1 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">{job.title}</h1>
           <div className="flex flex-wrap gap-6 text-gray-600 mb-8 border-b border-gray-100 pb-8">
             <div className="flex items-center gap-2">
-              <MapPin className="w-5 h-5 text-[#24439C]" />
+              <MapPin className="w-5 h-5 text-[#071A27]" />
               <span className="text-lg">{job.location}</span>
             </div>
             {job.salary && (
               <div className="flex items-center gap-2">
-                <DollarSign className="w-5 h-5 text-[#24439C]" />
+                <DollarSign className="w-5 h-5 text-[#071A27]" />
                 <span className="text-lg">{job.salary}</span>
               </div>
             )}
@@ -52,7 +52,7 @@ export default async function JobDetails({ params }: { params: Promise<{ id: str
           </div>
           
           <div className="mt-12 pt-8 border-t border-gray-100">
-            <Link href={`/apply/${job.id}`} className="inline-block w-full text-center md:w-auto bg-[#24439C] hover:bg-[#1a3070] text-white font-bold py-4 px-12 rounded-full transition-colors text-lg shadow-md hover:shadow-lg">
+            <Link href={`/apply/${job.id}`} className="inline-block w-full text-center md:w-auto bg-[#071A27] hover:bg-[#0B2B3E] text-white font-bold py-4 px-12 rounded-full transition-colors text-lg shadow-md hover:shadow-lg">
               Apply for this Position
             </Link>
           </div>

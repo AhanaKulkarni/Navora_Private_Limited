@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 import { track } from "@vercel/analytics";
 
 import React, { useState, useEffect } from "react";
@@ -119,15 +119,15 @@ const Article = () => {
           </p>
 
           <p className="mb-6">
-            In today’s dynamic business landscape, Joint Ventures (JVs) are
-            becoming a powerful growth strategy—bringing together two
+            In todayâ€™s dynamic business landscape, Joint Ventures (JVs) are
+            becoming a powerful growth strategyâ€”bringing together two
             organizations to combine strengths, expand into new markets, and
             accelerate innovation.
           </p>
 
           <div className="mb-10 rounded-2xl border-l-4 border-[#B8962D] bg-[#1A365D] p-6 text-white">
             <p className="m-0 text-lg font-semibold">
-              But here’s the real challenge:
+              But hereâ€™s the real challenge:
             </p>
             <p className="mt-2 text-slate-200">
               Recruiting the right talent for a JV is very different from
@@ -142,7 +142,7 @@ const Article = () => {
             </h2>
 
             <p className="mb-6">
-              You’re not hiring for one company—you’re hiring for an ecosystem
+              Youâ€™re not hiring for one companyâ€”youâ€™re hiring for an ecosystem
               shaped by multiple stakeholders, each bringing:
             </p>
 
@@ -180,7 +180,7 @@ const Article = () => {
                   1. Alignment with Dual Stakeholders
                 </h4>
                 <p className="text-sm text-slate-600">
-                  Candidates must align with both entities—not just one. Clarity
+                  Candidates must align with both entitiesâ€”not just one. Clarity
                   on reporing lines, decision-making authority, and success
                   metrics is non-negotiable.
                 </p>
@@ -256,7 +256,7 @@ const Article = () => {
                   6. Ability to Hold Their Ground
                 </h4>
                 <p className="mb-3 text-sm text-slate-600">
-                  In a JV setup, with multiple voices at the table, it’s easy
+                  In a JV setup, with multiple voices at the table, itâ€™s easy
                   for individuals to get overshadowed. The right hire is someone
                   who can:
                 </p>
@@ -269,7 +269,7 @@ const Article = () => {
             </div>
 
             <div className="mt-10 rounded-2xl border border-slate-100 bg-slate-50 p-6 text-slate-600 italic">
-              Because JVs don’t just need agreement—they need constructive
+              Because JVs donâ€™t just need agreementâ€”they need constructive
               challenge, balanced influence, and strong voices that ensure
               decisions are well-rounded.
             </div>
@@ -282,7 +282,7 @@ const Article = () => {
             </h2>
 
             <p className="mb-6">
-              Recruiting for a JV is not about ticking boxes. It’s about
+              Recruiting for a JV is not about ticking boxes. Itâ€™s about
               identifying individuals who can navigate complexity, balance power
               dynamics, and build collaboration without losing their voice.
             </p>
@@ -290,7 +290,7 @@ const Article = () => {
             <div className="inline-block rounded-full bg-slate-100 p-1">
               <div className="rounded-full border border-slate-200 bg-white px-8 py-3 shadow-sm">
                 <span className="text-lg font-black text-[#1A365D]">
-                  Because ultimately— the success of a JV is not defined on
+                  Because ultimatelyâ€” the success of a JV is not defined on
                   paper, but in how its people work together
                 </span>
               </div>

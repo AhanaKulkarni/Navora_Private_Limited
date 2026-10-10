@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import NextImage from "next/image";
 import { ReactNode, useEffect, useRef, useState } from "react";
@@ -55,7 +55,7 @@ const TESTIMONIALS: Testimonial[] = [
         <p>Thank you once again for your support.</p>
         <br />
         <p>Warm regards,</p>
-        <p>Arun D’Sa</p>
+        <p>Arun Dâ€™Sa</p>
       </>
     ),
     image: "/images/testimonials/rahul.jpg",
@@ -115,7 +115,7 @@ export default function TestimonialSlider({ initialTestimonials }: { initialTest
                 Candidates Testimonials...
               </h1>
               <h2 className="text-2xl font-thin text-slate-900 md:text-4xl">
-                Here’s what candidates recruited through us had to say about
+                Hereâ€™s what candidates recruited through us had to say about
                 their{" "}
                 <span className="text-secondary font-medium">experience</span>{" "}
                 with us.
@@ -133,11 +133,11 @@ export default function TestimonialSlider({ initialTestimonials }: { initialTest
                   <g id="right_quote">
                     <path
                       d="M0,4v12h8c0,4.41-3.586,8-8,8v4c6.617,0,12-5.383,12-12V4H0z"
-                      fill="#CEA72B"
+                      fill="#CE9C5B"
                     />
                     <path
                       d="M20,4v12h8c0,4.41-3.586,8-8,8v4c6.617,0,12-5.383,12-12V4H20z"
-                      fill="#CEA72B"
+                      fill="#CE9C5B"
                     />
                   </g>
                 </g>
@@ -149,7 +149,7 @@ export default function TestimonialSlider({ initialTestimonials }: { initialTest
           <Testimonials items={initialTestimonials} />
 
           <p className="mt-4 text-center text-sm text-slate-500">
-            “Every journey is unique — we’re grateful to be part of theirs.”
+            â€œEvery journey is unique â€” weâ€™re grateful to be part of theirs.â€
           </p>
         </div>
       </section>

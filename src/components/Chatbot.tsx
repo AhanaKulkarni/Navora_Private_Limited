@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import { useState } from "react";
 import { MessageCircle, X, Send } from "lucide-react";
@@ -32,7 +32,7 @@ export default function Chatbot() {
       {/* Floating Action Button */}
       <button
         onClick={() => setIsOpen(true)}
-        className={`fixed bottom-6 right-6 p-4 bg-[#24439C] text-white rounded-full shadow-2xl hover:bg-[#1a3070] transition-transform hover:scale-105 z-50 ${isOpen ? 'hidden' : 'block'}`}
+        className={`fixed bottom-6 right-6 p-4 bg-[#071A27] text-white rounded-full shadow-2xl hover:bg-[#0B2B3E] transition-transform hover:scale-105 z-50 ${isOpen ? 'hidden' : 'block'}`}
       >
         <MessageCircle className="w-6 h-6" />
       </button>
@@ -47,7 +47,7 @@ export default function Chatbot() {
             className="fixed bottom-6 right-6 w-[350px] h-[500px] bg-white rounded-2xl shadow-2xl flex flex-col z-50 overflow-hidden border border-gray-200"
           >
             {/* Header */}
-            <div className="bg-[#24439C] p-4 text-white flex justify-between items-center">
+            <div className="bg-[#071A27] p-4 text-white flex justify-between items-center">
               <div className="font-semibold flex items-center gap-2">
                 <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></div>
                 Navora Support
@@ -60,7 +60,7 @@ export default function Chatbot() {
             {/* Messages Area */}
             <div className="flex-1 p-4 overflow-y-auto flex flex-col gap-3 bg-slate-50">
               {messages.map((msg, idx) => (
-                <div key={idx} className={`max-w-[80%] p-3 rounded-xl text-sm ${msg.role === 'user' ? 'bg-[#24439C] text-white self-end rounded-br-sm' : 'bg-white border border-gray-100 text-gray-800 self-start rounded-bl-sm shadow-sm'}`}>
+                <div key={idx} className={`max-w-[80%] p-3 rounded-xl text-sm ${msg.role === 'user' ? 'bg-[#071A27] text-white self-end rounded-br-sm' : 'bg-white border border-gray-100 text-gray-800 self-start rounded-bl-sm shadow-sm'}`}>
                   {msg.text}
                 </div>
               ))}
@@ -78,7 +78,7 @@ export default function Chatbot() {
               />
               <button 
                 onClick={handleSend}
-                className="p-2 bg-[#CEA72B] text-[#24439C] rounded-full hover:bg-[#b0882e] transition-colors"
+                className="p-2 bg-[#CE9C5B] text-[#071A27] rounded-full hover:bg-[#b0882e] transition-colors"
               >
                 <Send className="w-4 h-4" />
               </button>

@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 import dynamic from "next/dynamic";
 import { useState } from "react";
 import "react-phone-number-input/style.css";
@@ -126,7 +126,7 @@ export default function Apply({ job }: { job: Job }) {
                 name="attachment"
                 accept=".pdf,.doc,.docx"
                 required
-                className="w-full rounded-md border border-gray-300 px-4 py-2 file:cursor-pointer file:rounded-md file:border-0 file:bg-[#24439C] file:px-4 file:py-2 file:text-white hover:file:bg-[#1a3070] focus:border-gray-400 focus:ring-0 focus:outline-none"
+                className="w-full rounded-md border border-gray-300 px-4 py-2 file:cursor-pointer file:rounded-md file:border-0 file:bg-[#071A27] file:px-4 file:py-2 file:text-white hover:file:bg-[#0B2B3E] focus:border-gray-400 focus:ring-0 focus:outline-none"
               />
               <p className="text-sm text-gray-400">
                 Accepted formats: PDF, DOC, DOCX. Max size: 5MB
@@ -167,7 +167,7 @@ export default function Apply({ job }: { job: Job }) {
                     type="radio"
                     name="previousEmployment"
                     value="yes"
-                    className="accent-[#24439C]"
+                    className="accent-[#071A27]"
                     checked={previousEmployment === "yes"}
                     onChange={() => setPreviousEmployment("yes")}
                   />
@@ -178,7 +178,7 @@ export default function Apply({ job }: { job: Job }) {
                     type="radio"
                     name="previousEmployment"
                     value="no"
-                    className="accent-[#24439C]"
+                    className="accent-[#071A27]"
                     checked={previousEmployment === "no"}
                     onChange={() => setPreviousEmployment("no")}
                   />
@@ -203,7 +203,7 @@ export default function Apply({ job }: { job: Job }) {
                 type="checkbox"
                 name="consent"
                 required
-                className="mt-1 h-4 w-4 accent-[#24439C]"
+                className="mt-1 h-4 w-4 accent-[#071A27]"
               />
               <span className="text-sm text-gray-600">
                 I agree to receive recruitment-related communications from
@@ -213,7 +213,7 @@ export default function Apply({ job }: { job: Job }) {
                   href="/privacy-policy"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-[#24439C] underline"
+                  className="text-[#071A27] underline"
                 >
                   Recruitment and Applicant Privacy Policy
                 </a>
@@ -225,7 +225,7 @@ export default function Apply({ job }: { job: Job }) {
           <div className="mt-6 flex justify-end">
             <button
               type="submit"
-              className="rounded-md bg-[#24439C] hover:bg-[#1a3070] px-6 py-3 font-semibold text-white transition-colors"
+              className="rounded-md bg-[#071A27] hover:bg-[#0B2B3E] px-6 py-3 font-semibold text-white transition-colors"
             >
               Submit Application
             </button>

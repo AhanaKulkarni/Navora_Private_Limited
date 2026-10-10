@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import Image from "next/image";
 import { cn } from "@/lib/utils";
@@ -109,7 +109,7 @@ export const InfiniteMovingCards = ({
                     alt={item.name}
                     width={54}
                     height={54}
-                    className="rounded-full object-cover ring-1 ring-[#CEA72B]"
+                    className="rounded-full object-cover ring-1 ring-[#CE9C5B]"
                   />
 
                   <span className="flex flex-col">
