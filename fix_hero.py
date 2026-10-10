@@ -1,4 +1,5 @@
-import React from 'react';
+﻿# -*- coding: utf-8 -*-
+hero_content = """import React from 'react';
 import Link from 'next/link';
 import { ArrowRight } from 'lucide-react';
 
@@ -62,3 +63,6 @@ export default function Hero() {
     </section>
   );
 }
+"""
+with open('src/components/navora-components/Hero.tsx', 'w', encoding='utf-8') as f:
+    f.write(hero_content)
