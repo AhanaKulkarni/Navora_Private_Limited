@@ -1,4 +1,6 @@
-import prisma from "@/lib/prisma";
+import os
+
+jobs_content = """import prisma from "@/lib/prisma";
 import { MapPin, Bookmark } from "lucide-react";
 import Link from "next/link";
 import { formatDistanceToNow } from "date-fns";
@@ -154,3 +156,7 @@ export default async function JobsPage() {
     </div>
   );
 }
+"""
+
+with open('src/app/jobs/page.tsx', 'w', encoding='utf-8') as f:
+    f.write(jobs_content.replace('\\"', '"'))
