@@ -34,9 +34,12 @@ export default function Hero() {
 
         {/* Right Image */}
         <div className="relative h-[60vh] lg:h-[80vh] w-full overflow-hidden rounded-sm group">
-          <img 
-            src="/hero-bg.jpg" 
-            alt="Maritime cargo ship on the ocean" 
+          <video 
+            src="/hero-video.mp4" 
+            autoPlay 
+            muted 
+            loop 
+            playsInline
             className="absolute inset-0 w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105"
           />
           <div className="absolute inset-0 bg-abyss/10 mix-blend-overlay"></div>
