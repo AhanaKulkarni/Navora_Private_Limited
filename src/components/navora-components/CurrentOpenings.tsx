@@ -100,7 +100,7 @@ export default function CurrentOpening({ initialJobs = [] }: { initialJobs: Job[
                   </div>
                   
                   <Link 
-                    href={/jobs/}
+                    href={`/jobs/${job._id}`}
                     className="inline-flex items-center justify-center bg-brass-signal hover:bg-[#b5874c] text-abyss font-medium px-6 py-2.5 rounded-sm transition-colors group/btn"
                   >
                     View role

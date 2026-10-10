@@ -1,6 +1,6 @@
 import React from 'react';
 import Link from 'next/link';
-import { PlayCircle, Youtube } from 'lucide-react';
+import { PlayCircle, Video } from 'lucide-react';
 
 const videos = [
   {
@@ -27,11 +27,10 @@ export default function RendezvousPage() {
   return (
     <div className="min-h-screen bg-warm-foam text-abyss pt-32 pb-24 font-sans">
       <div className="max-w-[90rem] mx-auto px-6 md:px-12">
-        {/* Header Section */}
         <div className="mb-20 flex flex-col md:flex-row gap-12 items-center">
           <div className="md:w-1/2">
             <div className="flex items-center gap-3 mb-6">
-              <Youtube className="w-8 h-8 text-[#FF0000]" />
+              <Video className="w-8 h-8 text-[#FF0000]" />
               <span className="text-[12px] font-mono tracking-widest uppercase text-brass-signal font-bold">
                 Original Series
               </span>
@@ -40,7 +39,7 @@ export default function RendezvousPage() {
               Rendezvous with Roohi
             </h1>
             <p className="text-lg text-abyss/80 leading-relaxed mb-8">
-              Rendezvous with Roohi is an exclusive video series where we sit down with industry leaders, visionaries, and seasoned professionals across the maritime and energy sectors. Discover untold stories, gain invaluable career advice, and explore the trends shaping the future of global shipping—all through engaging, candid conversations.
+              Rendezvous with Roohi is an exclusive video series where we sit down with industry leaders, visionaries, and seasoned professionals across the maritime and energy sectors. Discover untold stories, gain invaluable career advice, and explore the trends shaping the future of global shipping.
             </p>
             <Link 
               href="https://youtube.com/@rendezvouswithroohi?si=NN9rHswMMePvqTkQ"
@@ -57,7 +56,6 @@ export default function RendezvousPage() {
           </div>
         </div>
 
-        {/* Videos Grid */}
         <div className="border-t border-abyss/10 pt-16">
           <h2 className="text-3xl font-heading font-medium mb-10">Latest Episodes</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
@@ -88,7 +86,6 @@ export default function RendezvousPage() {
             ))}
           </div>
         </div>
-
       </div>
     </div>
   );

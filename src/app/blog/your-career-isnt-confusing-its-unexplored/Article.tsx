@@ -175,7 +175,6 @@ const Article = () => {
                     rel="noopener noreferrer"
                   >
                     <div
-                      size={14}
                       className="cursor-pointer transition-colors hover:text-[#B8962D]"
                     />
                   </a>
@@ -490,7 +489,6 @@ const Article = () => {
                     rel="noopener noreferrer"
                   >
                     <div
-                      size={22}
                       className="cursor-pointer transition-colors hover:text-[#B8962D]"
                     />
                   </a>
